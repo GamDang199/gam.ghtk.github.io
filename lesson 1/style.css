@@ -1,0 +1,151 @@
+* {
+	margin: 0 50px;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	/*background: rgb(51, 0, 0)!important;*/
+
+}
+.header {
+	display: flex;
+	margin-top: 50px;
+	width: 100%;
+	height: 275px;
+	justify-content: center;
+	align-items: center;
+	/*border: 1px solid black;*/
+	border-radius: 5px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
+	font-size: 20px;
+	/*background: lightgreen;*/
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.personal_image {
+	flex: 2;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	border-right: 1px solid black;
+	text-align: center;
+}
+
+.content-header {
+	flex: 3;
+	padding-top: 20px;
+	padding-left: 75px;
+}
+
+.personal_image img {
+	/*width: 100%;*/
+	height: 100%;
+}
+
+.main-content{
+	margin-top: 50px;
+}
+
+.main {
+	margin-bottom: 50px;
+}
+
+.main h3 { 
+	background: #FF7F24;
+	display: inline-block;
+	border-radius: 27px;
+	padding: 10px;
+	padding-right: 50px;
+	font-weight: bolder;
+	color: #F5F5DC;
+	font-style: italic;
+	transition: 0.5s;
+	transition-timing-function: ease-in;
+}
+
+.main h3:hover{
+	margin-left: 120px;
+	box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.main h3 i {
+	font-size: 18px;
+}
+
+.content {
+	display: flex;
+	margin-top: 20px;
+	font-family: 'Bitter', serif;
+}
+
+.main:hover .content .content-right{
+	font-size: 21px;
+	margin-left: 70px;
+	font-weight: bold;
+}
+
+.content-left {
+	flex: 2;
+	margin:0 15px;
+	vertical-align: top;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.content-right {
+	flex: 5;
+	font-size: 20px;
+}
+
+.content-right ul{
+	margin: 0;
+	padding: 0;
+}
+
+.content-right ul li{
+	margin: 0;
+	padding: 0;
+}
+
+.content-differ{
+	margin-left: 15px;
+}
+
+.content-differ b{
+	font-size: 23px;
+}
+
+.content-differ:hover b{
+	font-size: 24px;
+	margin-left: 70px;
+}
+
+.content-differ:hover span{
+	margin-left: 70px;
+	font-size: 17px;
+}
+
+.main h4{
+	padding: 10px;
+	font-size: 25px;
+	font-style: italic;
+	color: #8B2323;
+}
+
+.main:hover h4{
+	margin-left: 70px;
+	font-size: 25px;
+}
+.content-info ul{
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+	padding-left: 1em;
+}
+
+.main:hover .content-info ul{
+	font-size: 20px;
+	padding-left: 2rem;
+	font-weight: bold;
+}
