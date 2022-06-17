@@ -1,29 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
+import ISudentDTO from "../../model/studentDTO";
 import "./SearchStudent.css";
+
 const SearchStudent = () => {
-  const [codeStudent, setCodeStudent] = useState<any>("");
-  const [fullname, setFullname] = useState<any>("");
   const [data, setData] = useState<any>({ codeStudent: "", fullname: "" });
   const callApiGet = async () => {
     try {
-      console.log(data);
-
-      const res: any = await axios.get(
+      const res = await axios.post(
         "http://localhost:8080/api/v1/students/searchStudent",
-        data
+        data,
+        { headers: { "Content-Type": "application/json" } }
       );
-      console.log(res);
+      console.log(res.data);
     } catch (error: any) {
       console.log(error);
     }
   };
   const changeCodeStudent = (e: any) => {
     setData({ ...data, codeStudent: e.target.value });
-    setCodeStudent(e.target.value);
   };
   const changeFullname = (e: any) => {
-    setFullname(e.target.value);
     setData({ ...data, fullname: e.target.value });
   };
   const submit = (e: any) => {

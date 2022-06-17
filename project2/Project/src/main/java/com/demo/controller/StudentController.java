@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.demo.dto.StudentDTO;
 import com.demo.entities.Student;
 import com.demo.exception.ResourceNotFoundException;
 import com.demo.repository.StudentRepository;
@@ -42,6 +44,39 @@ public class StudentController {
 		return ResponseEntity.ok(student);
 	}
 	
+	//get student by code student rest api
+//	@GetMapping("/students/searchStudent")
+//	public ResponseEntity<List<Student>> findStudent(@RequestParam("codeStudent") String codeStudent, @RequestParam("fullname") String fullname) {
+//		String codeStu = codeStudent.replaceAll("\\s+", " ").trim().toUpperCase();
+//		String name = fullname.replaceAll("\\s+", " ").trim();
+//		List<Student> list = null;
+//		if(codeStu == "" && name != "") {
+//			list = studentRepository.findByNameStudent(name);
+//		} else if (codeStu != "" && fullname == "") {
+//			list = studentRepository.findByCodeStudent(codeStu);
+//		} else {
+//			list = studentRepository.findStudent(codeStu, name);
+//		}
+//		
+//		return ResponseEntity.ok(list);
+//	}
+	
+	@PostMapping("/students/searchStudent")
+	public ResponseEntity<List<Student>> findStudent(@RequestBody StudentDTO stuDTO){
+		String codeStu = stuDTO.getCodeStudent().replaceAll("\\s+", " ").trim().toUpperCase();
+		String name = stuDTO.getFullname().replaceAll("\\s+", " ").trim();
+		List<Student> list = null;
+		if(codeStu == "" && name != "") {
+			list = studentRepository.findByNameStudent(name);
+		} else if (codeStu != "" && name == "") {
+			list = studentRepository.findByCodeStudent(codeStu);
+		} else {
+			list = studentRepository.findStudent(codeStu, name);
+		}
+		
+		return ResponseEntity.ok(list);
+	}
+	
 	@PostMapping("/import")
 	public void mapReapExcelDataToDB(@RequestParam("file") MultipartFile reapExcelDataFile) throws IOException {
 		List<Student> temStudentList = new ArrayList<Student>();
@@ -53,7 +88,7 @@ public class StudentController {
 //			student.setId((int) row.getCell(0).getNumericCellValue());
 			student.setNameSchool(row.getCell(1).getStringCellValue());
 			student.setDistrict(row.getCell(2).getStringCellValue());
-			student.setCodeStudent(row.getCell(3).getStringCellValue());
+			student.setCodeStudent(row.getCell(3).getStringCellValue().replaceAll("\n", ""));
 			student.setClassroom(row.getCell(4).getStringCellValue());
 			student.setFullname(row.getCell(5).getStringCellValue());
 			student.setDate(Integer.parseInt(row.getCell(6).getStringCellValue()));
