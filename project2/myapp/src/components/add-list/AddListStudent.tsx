@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./AddListStudent.css";
-import * as XLSX from "xlsx";
-import { json } from "stream/consumers";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import showToast from "../toastify";
+import { ToastContainer } from "react-toastify";
 
 const AddListStudent = () => {
   const navigate = useNavigate();
@@ -11,24 +12,33 @@ const AddListStudent = () => {
   const takeFile = (e: any) => {
     setFile(e.target.files[0]);
   };
-  
+
   const callApi = async () => {
     try {
       console.log(file);
-      
-      const res: any = await axios.post("http://localhost:8080/api/v1/import", {file: file}, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      if(res.status == 200) {
-        navigate('/searchStudent')
+
+      const res: any = await axios.post(
+        "http://localhost:8080/api/v1/import",
+        { file: file },
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      showToast("Thêm file thành công", "success");
+      if (res.status == 200) {
+        
+        navigate("/searchStudent");
       }
-    } catch (error) {}
+    } catch (error) {
+      showToast("Failed!", "error");
+    }
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
   return (
     <div className="mt-5">
+      <ToastContainer />
       <form action="post" onSubmit={handleSubmit}>
         <input
           type="file"

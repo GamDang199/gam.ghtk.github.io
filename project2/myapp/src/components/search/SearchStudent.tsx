@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import ISudent from "../../model/student";
 import ISudentDTO from "../../model/studentDTO";
 import "./SearchStudent.css";
 
@@ -8,17 +9,21 @@ const SearchStudent = () => {
     codeStudent: "",
     fullname: "",
   });
-  const [resData, setResData] = useState<any>();
-
+  const [resData, setResData] = useState<ISudent[]>([]);
+  useEffect(() => {}, [resData]);
   const callApiGet = async () => {
     try {
-      const res = await axios.post(
-        "http://localhost:8080/api/v1/students/searchStudent",
-        data,
-        { headers: { "Content-Type": "application/json" } }
-      );
-      setResData(res.data);
-    } catch (error: any) {
+      await axios
+        .post("http://localhost:8080/api/v1/students/searchStudent", data, {
+          headers: { "Content-Type": "application/json" },
+        })
+        .then((res) => {
+          setResData(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
       console.log(error);
     }
   };
@@ -32,19 +37,17 @@ const SearchStudent = () => {
     e.preventDefault();
   };
 
-  const displayData: any = (e: any) =>
-    e?.map((item: any, index: any) => {
-      return (
-        <tr key={index}>
-          <td>{item.codeStudent}</td>
-          <td>{item.fullname}</td>
-          <td>{item.nameSchool}</td>
-          <td>{item.classroom}</td>
-          <td>{item.totalPoint}</td>
-          <td>{item.note}</td>
-        </tr>
-      );
-    });
+  let displayData = (e: any) =>
+    e.map((item: any, index: any) => (
+      <tr key={index}>
+        <td>{item.codeStudent}</td>
+        <td>{item.fullname}</td>
+        <td>{item.nameSchool}</td>
+        <td>{item.classroom}</td>
+        <td>{item.totalPoint}</td>
+        <td>{item.note}</td>
+      </tr>
+    ));
 
   return (
     <div>
@@ -74,7 +77,7 @@ const SearchStudent = () => {
           </div>
 
           <button
-            className="btn btn-primary button-search mt-5"
+            className="btn btn-primary button-search mt-5 mb-5"
             onClick={callApiGet}
           >
             Tìm kiếm
