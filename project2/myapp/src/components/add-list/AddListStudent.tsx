@@ -14,31 +14,39 @@ const AddListStudent = () => {
   };
 
   const callApi = async () => {
-    try {
-      console.log(file);
-
-      const res: any = await axios.post(
+    await axios
+      .post(
         "http://localhost:8080/api/v1/import",
         { file: file },
         {
           headers: { "Content-Type": "multipart/form-data" },
         }
-      );
-      showToast("Thêm file thành công", "success");
-      if (res.status == 200) {
-        
+      )
+      .then((res) => {
+        showToast("Thêm file thành công", "success");
         navigate("/searchStudent");
-      }
-    } catch (error) {
-      showToast("Failed!", "error");
-    }
+      })
+      .catch((error) => {
+        console.log(error);
+        showToast("Failed!", "error");
+      });
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
   return (
     <div className="mt-5">
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <form action="post" onSubmit={handleSubmit}>
         <input
           type="file"
