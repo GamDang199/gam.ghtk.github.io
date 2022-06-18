@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Modal } from "react-bootstrap";
 import ISudent from "../../model/student";
 import ISudentDTO from "../../model/studentDTO";
 import "./SearchStudent.css";
@@ -9,6 +10,9 @@ const SearchStudent = () => {
     codeStudent: "",
     fullname: "",
   });
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   const [resData, setResData] = useState<ISudent[]>([]);
   useEffect(() => {}, [resData]);
   const callApiGet = async () => {
@@ -40,17 +44,24 @@ const SearchStudent = () => {
   let displayData = (e: any) =>
     e.map((item: any, index: any) => (
       <tr key={index}>
+        <td>{index + 1}</td>
         <td>{item.codeStudent}</td>
         <td>{item.fullname}</td>
         <td>{item.nameSchool}</td>
         <td>{item.classroom}</td>
         <td>{item.totalPoint}</td>
         <td>{item.note}</td>
+        <td>
+          <button className="btn btn-danger" onClick={handleShow}>
+            Chi tiet
+          </button>
+        </td>
       </tr>
     ));
 
   return (
     <div>
+      {/* <Modal show={show}></Modal> */}
       <div className="mt-5 form-search">
         <form onSubmit={submit}>
           <div className="block-input">
@@ -84,16 +95,18 @@ const SearchStudent = () => {
           </button>
         </form>
       </div>
-      <div className="displayInfoStu">
-        <table className="table">
-          <thead>
+      <div className="displayInfoStu container">
+        <table className="table table-bordered table-dark">
+          <thead className="thead-dark">
             <tr>
+              <td>STT</td>
               <td>Ma sinh vien</td>
               <td>Ho va ten</td>
               <td>Truong tieu hoc</td>
               <td>Lop</td>
               <td>Tong diem</td>
               <td>Ghi chu</td>
+              <td></td>
             </tr>
           </thead>
 

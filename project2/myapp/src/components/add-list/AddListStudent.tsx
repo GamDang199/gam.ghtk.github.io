@@ -36,17 +36,6 @@ const AddListStudent = () => {
   };
   return (
     <div className="mt-5">
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
       <form action="post" onSubmit={handleSubmit}>
         <input
           type="file"

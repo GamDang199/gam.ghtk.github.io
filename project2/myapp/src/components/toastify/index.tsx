@@ -4,7 +4,7 @@ const showToast = (mes: string, type: string) => {
   switch (type) {
     case "success":
       toast.success(mes, {
-        position: "top-center",
+        position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -18,13 +18,13 @@ const showToast = (mes: string, type: string) => {
       setTimeout(() => {
         toast.dismiss();
         toast.warn(mes, {
-          position: "top-center",
+          position: "top-right",
         });
       }, 400);
       break;
     case "error":
       toast.error(mes, {
-        position: "top-center",
+        position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
