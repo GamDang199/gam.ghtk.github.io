@@ -3,6 +3,7 @@ $color_green: #41c460;
 $color_white: #f5f7f5;
 $color_border: #aab5ac;
 $color_outline: #7d827e;
+$color_red: #bf1d0b;
 $color_reset: #d9d32e;
 $color_border_light: #c7c3c3;
 body {
@@ -10,10 +11,13 @@ body {
 }
 
 
-.form-create{
-    width: 1024px;
+.form-create{ 
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     form {
+        width: 1024px;
         border-bottom: 1px solid $color_border;
         border-left : 1px solid $color_border_light;
         border-right : 1px solid $color_border_light;
@@ -38,6 +42,11 @@ body {
                 border: none;
                 border-radius: 5px;
                 outline: 1px solid $color_outline;
+            }
+            span.form-message {
+                display: none;
+                color: $color_red;
+                margin-top: 7px;
             }
         }
         .action{
@@ -74,6 +83,24 @@ body {
                 border: 1px solid $color_border;
                 color: $color_white;
                 background-color: $color_green;
+            }
+            td {
+                padding: 10px;
+                font-size: larger;
+                border: 1px solid $color_border;
+                button.btn {
+                    padding: 12px 20px;
+                    border-radius: 5px;
+                    outline: none;
+                    border: none;
+                    font-size: large;
+                }
+                .btn-edit {
+                    background-color: $color_reset;
+                }
+                .btn-delete {
+                    background-color: $color_red;
+                }
             }
         }
     }

@@ -3,10 +3,13 @@ body {
 }
 
 .form-create {
-  width: 1024px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .form-create form {
+  width: 1024px;
   border-bottom: 1px solid #aab5ac;
   border-left: 1px solid #c7c3c3;
   border-right: 1px solid #c7c3c3;
@@ -33,6 +36,11 @@ body {
   border: none;
   border-radius: 5px;
   outline: 1px solid #7d827e;
+}
+.form-create form .input-1 span.form-message {
+  display: none;
+  color: #bf1d0b;
+  margin-top: 7px;
 }
 .form-create form .action {
   margin: 12px 20px;
@@ -65,4 +73,22 @@ body {
   border: 1px solid #aab5ac;
   color: #f5f7f5;
   background-color: #41c460;
+}
+.display-infoStu table tr td {
+  padding: 10px;
+  font-size: larger;
+  border: 1px solid #aab5ac;
+}
+.display-infoStu table tr td button.btn {
+  padding: 12px 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: large;
+}
+.display-infoStu table tr td .btn-edit {
+  background-color: #d9d32e;
+}
+.display-infoStu table tr td .btn-delete {
+  background-color: #bf1d0b;
 }/*# sourceMappingURL=style.css.map */

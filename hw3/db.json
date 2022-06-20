@@ -1,18 +1,40 @@
 {
   "student": [
     {
-      "id": 4,
+      "id": 1,
       "name": "Nguyen Thanh Do",
       "classroom": "12A8",
+      "email": "dont@gmail.com",
+      "birthday": "12/09/2005",
       "createdAt": 1655695506300,
       "updatedAt": 1655695506300
     },
     {
+      "id": 2,
       "name": "Nguyen Thanh Nam",
       "classroom": "12A8",
+      "email": "namnt@gmai.com",
+      "birthday": "12/09/2005",
       "createdAt": 1655695523951,
-      "updatedAt": 1655695523951,
-      "id": 5
+      "updatedAt": 1655695523951
+    },
+    {
+      "name": "Trần Thị Hồng Vân",
+      "classroom": "12A8",
+      "email": "dangthihonggam199@gmail.com",
+      "birthday": "2022-06-03",
+      "createdAt": 1655724419876,
+      "updatedAt": 1655724419876,
+      "id": 3
+    },
+    {
+      "name": "Đặng Gấm",
+      "classroom": "12A8",
+      "email": "gamdth@gmail.com",
+      "birthday": "2022-06-01",
+      "createdAt": 1655742279093,
+      "updatedAt": 1655742279093,
+      "id": 4
     }
   ]
 }

@@ -7,35 +7,40 @@
     <title>Manage Student</title>
     <link rel="stylesheet" href="./style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"> -->
 </head>
 <body>
     <div class="form-create">
-        <form action="">
+        <form action="" id="register-form">
             <h2>Sign Up User</h2>
             <div class="input-1">
-                <label for="">Fullname</label>
-                <input type="text">
+                <label for="fullname">Fullname</label>
+                <input id="fullname" name="fullname" rules="required" type="text">
+                <span class="form-message">Trường này không được để trống</span>
             </div>
             <div class="input-1">
-                <label for="">Classroom</label>
-                <input type="text">
+                <label for="classroom">Classroom</label>
+                <input id="classroom" type="text" rules="required|classroom">
+                <span class="form-message">Trường này không được để trống</span>
             </div>
             <div class="input-1">
-                <label for="">Email</label>
-                <input type="text">
+                <label for="email">Email</label>
+                <input id="email" type="text" rules="required|email">
+                <span class="form-message">Trường này không được để trống</span>
             </div>
             <div class="input-1">
-                <label for="">Birthday</label>
-                <input type="date">
+                <label for="birthday">Birthday</label>
+                <input id="birthday" type="date" rules="required|birthday">
+                <span class="form-message">Trường này không được để trống</span>
             </div>
             <div class="action">
-                <button class="btn btn-save" id = "btn-save">Save</button>
-                <button class="btn btn-reset" id = "btn-reset">Reset</button>
+                <button class="btn btn-save" id = "btn-save" type="submit" onclick="createStudent()">Save</button>
+                <button class="btn btn-reset" id = "btn-reset" type="reset">Reset</button>
             </div>
         </form>
     </div>
     <div class="display-infoStu">
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>No</th>
@@ -47,9 +52,16 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="display-data">
+                
+            </tbody>
         </table>
     </div>
-    <script src=""></script>
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script>
+        
+    </script>
 </body>
 </html>
