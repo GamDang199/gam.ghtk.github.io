@@ -1,0 +1,80 @@
+
+$color_green: #41c460;
+$color_white: #f5f7f5;
+$color_border: #aab5ac;
+$color_outline: #7d827e;
+$color_reset: #d9d32e;
+$color_border_light: #c7c3c3;
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+
+.form-create{
+    width: 1024px;
+    margin-bottom: 20px;
+    form {
+        border-bottom: 1px solid $color_border;
+        border-left : 1px solid $color_border_light;
+        border-right : 1px solid $color_border_light;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       padding: 20px;
+        h2 {
+            background-color: $color_green;
+            color: $color_white;
+            padding: 15px 35px;
+            border-radius: 5px;
+        }
+        .input-1 {
+           display: flex;
+           flex-direction: column; 
+           margin:12px 20px;
+           label {
+                margin-bottom: 7px;
+                margin-top: 10px;
+            }
+            input {
+                padding: 15px;
+                border: none;
+                border-radius: 5px;
+                outline: 1px solid $color_outline;
+            }
+        }
+        .action{
+            margin:12px 20px;
+            .btn {
+                padding: 12px 20px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                font-size: large;
+            }
+                
+            .btn-save {
+                background-color: $color_green;
+                margin-right: 10px;
+            }
+            .btn-reset {
+                background-color: $color_reset;
+            }
+            
+        }
+    }
+}
+
+.display-infoStu {
+    margin: 20px;
+    table {
+        width: 100%;
+        tr {
+            th{
+                text-align: center;
+                padding: 10px;
+                font-size: larger;
+                border: 1px solid $color_border;
+                color: $color_white;
+                background-color: $color_green;
+            }
+        }
+    }
+}

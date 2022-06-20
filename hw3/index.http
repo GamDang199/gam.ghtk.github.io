@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:3000/api
+
+
+# @name getAllStudents
+GET {{baseUrl}}/student
+
+
+####
+
+# @name addNewStudent
+POST {{baseUrl}}/student
+Content-Type: application/json
+
+{
+    "name": "Nguyen Thanh Nam",
+    "classroom": "12A8"
+}
+
+
+###
+
+# @name updateStudent
+
+PATCH   {{baseUrl}}/student/1
+Content-Type: application/json
+
+{
+    "classroom" : "12A8"
+}
+
+###
+
+# @name deleteStudent
+
+DELETE    {{baseUrl}}/student/1

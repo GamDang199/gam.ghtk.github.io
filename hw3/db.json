@@ -1,0 +1,18 @@
+{
+  "student": [
+    {
+      "id": 4,
+      "name": "Nguyen Thanh Do",
+      "classroom": "12A8",
+      "createdAt": 1655695506300,
+      "updatedAt": 1655695506300
+    },
+    {
+      "name": "Nguyen Thanh Nam",
+      "classroom": "12A8",
+      "createdAt": 1655695523951,
+      "updatedAt": 1655695523951,
+      "id": 5
+    }
+  ]
+}
