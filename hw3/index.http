@@ -13,7 +13,9 @@ Content-Type: application/json
 
 {
     "name": "Nguyen Thanh Nam",
-    "classroom": "12A8"
+    "classroom": "12A8",
+    "email": "namnt@gmail.com",
+    "birthday": "2022-10-15"
 }
 
 

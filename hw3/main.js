@@ -1,4 +1,3 @@
-const axios = require("axios");
 
 window.onload = (e) => {
   e.preventDefault();
@@ -30,15 +29,32 @@ const createStudent = () => {
     });
 };
 
-const preUpdateStudent = (data) => {
-
+const preUpdateStudent = (id) => {
+  axios.get(`http://localhost:3000/api/student/${id}`).then(res => {
+    // console.log(res.data);
+    displayInfoStuForm(res.data);
+  }).catch(er => {
+    console.log(er);
+  })
 }
 
 const updateStudent = (id) => {
-  axios.put(`urlBase/${id}`,  getDataFromInput()).then(res => {
+  axios
+    .put(`urlBase/${id}`, getDataFromInput())
+    .then((res) => {
       console.log("Update successfully!");
-  }).catch(error => {
-    console.log(error);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const deleteStudent = (id) => {
+  console.log(id);
+  axios.delete("http://localhost:3000/api/student/" + id).then(res => {
+    console.log("Delete susccessfully!");
+  }).catch(er => {
+    console.log("Delete failed!");
   })
 }
 
@@ -51,10 +67,10 @@ const displayStudent = (s, index) => {
         <td>${s.email}</td>
         <td>${s.birthday}</td>
         <td>
-            <button class="btn btn-edit" id="btn-edit" >Edit</button>
+            <button class="btn btn-edit" id="btn-edit" onclick="preUpdateStudent(${s.id})">Edit</button>
         </td>
         <td>
-            <button class="btn btn-delete" id="btn-delete">Delete</button>
+            <button class="btn btn-delete" id="btn-delete" onclick="deleteStudent(${s.id})">Delete</button>
         </td>
     </tr>
     `;
@@ -77,6 +93,15 @@ const getDataFromInput = () => {
   };
   return user;
 };
+
+const displayInfoStuForm = (data) => {
+  console.log(data.name);
+  document.getElementById("fullname").value = data.name;
+  document.getElementById("classroom").value = data.classroom;
+  document.getElementById("email").value = data.email;
+  document.getElementById("birthday").value = data.birthday;
+
+}
 
 // Validator = (formSelector) => {
 //   var formRules = {};
