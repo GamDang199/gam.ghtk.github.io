@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .form-create form {
   width: 1024px;
@@ -91,4 +92,63 @@ body {
 }
 .display-infoStu table tr td .btn-delete {
   background-color: #bf1d0b;
+}
+
+.form-update {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.form-update form {
+  width: 1024px;
+  border-bottom: 1px solid #aab5ac;
+  border-left: 1px solid #c7c3c3;
+  border-right: 1px solid #c7c3c3;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+}
+.form-update form h2 {
+  background-color: #41c460;
+  color: #f5f7f5;
+  padding: 15px 35px;
+  border-radius: 5px;
+}
+.form-update form .input-1 {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 20px;
+}
+.form-update form .input-1 label {
+  margin-bottom: 7px;
+  margin-top: 10px;
+}
+.form-update form .input-1 input {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  outline: 1px solid #7d827e;
+}
+.form-update form .input-1 span.form-message {
+  display: none;
+  color: #bf1d0b;
+  margin-top: 7px;
+}
+.form-update form .action {
+  margin: 12px 20px;
+}
+.form-update form .action .btn {
+  padding: 12px 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: large;
+}
+.form-update form .action .btn-save {
+  background-color: #41c460;
+  margin-right: 10px;
+}
+.form-update form .action .btn-reset {
+  background-color: #d9d32e;
 }/*# sourceMappingURL=style.css.map */

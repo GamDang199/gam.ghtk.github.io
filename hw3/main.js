@@ -21,7 +21,7 @@ const createStudent = () => {
   axios
     .post(urlBase, getDataFromInput())
     .then((res) => {
-      alert("Them moi thanh cong");
+      console.log("Them moi thanh cong");
       console.log(res);
     })
     .catch((error) => {
@@ -31,23 +31,39 @@ const createStudent = () => {
 
 const preUpdateStudent = (id) => {
   axios.get(`http://localhost:3000/api/student/${id}`).then(res => {
-    // console.log(res.data);
     displayInfoStuForm(res.data);
+    document.getElementById('btn-save').innerHTML = "Update";
+    document.getElementById('btn-save').value = "update";
+    document.getElementById('btn-save').setAttribute("valueId", id);
   }).catch(er => {
     console.log(er);
-  })
+  });
+  
 }
 
 const updateStudent = (id) => {
   axios
-    .put(`urlBase/${id}`, getDataFromInput())
+    .put(`http://localhost:3000/api/student/${id}`, getDataFromInput())
     .then((res) => {
       console.log("Update successfully!");
+      document.getElementById('btn-save').innerHTML = "Create";
+      document.getElementById('btn-save').value = "create";
     })
     .catch((error) => {
       console.log(error);
     });
 };
+const createAndUpdate = () => {
+  const action = document.getElementById('btn-save').value;
+  console.log(action);
+  if (action == "create") {
+    createStudent();
+  } else {
+    const id = document.getElementById('btn-save').getAttribute("valueId");
+    updateStudent(id);
+  }
+}
+
 
 const deleteStudent = (id) => {
   console.log(id);
@@ -67,7 +83,7 @@ const displayStudent = (s, index) => {
         <td>${s.email}</td>
         <td>${s.birthday}</td>
         <td>
-            <button class="btn btn-edit" id="btn-edit" onclick="preUpdateStudent(${s.id})">Edit</button>
+            <button class="btn btn-edit" id="btn-edit" type="button" onclick="preUpdateStudent(${s.id})">Edit</button>
         </td>
         <td>
             <button class="btn btn-delete" id="btn-delete" onclick="deleteStudent(${s.id})">Delete</button>
@@ -95,12 +111,16 @@ const getDataFromInput = () => {
 };
 
 const displayInfoStuForm = (data) => {
-  console.log(data.name);
   document.getElementById("fullname").value = data.name;
   document.getElementById("classroom").value = data.classroom;
   document.getElementById("email").value = data.email;
   document.getElementById("birthday").value = data.birthday;
 
+}
+
+const clickReset = () => {
+  document.getElementById('btn-save').innerHTML = "Create";
+  document.getElementById('btn-save').value = "create";
 }
 
 // Validator = (formSelector) => {

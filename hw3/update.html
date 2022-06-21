@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="form-update">
+        <form action="" id="update-form">
+          <h2>Update Student</h2>
+          <div class="input-1">
+            <label for="fullname-1">Fullname</label>
+            <input id="fullname-1" name="fullname" rules="required" type="text" />
+            <span class="form-message">Trường này không được để trống</span>
+          </div>
+          <div class="input-1">
+            <label for="classroom-1">Classroom</label>
+            <input id="classroom-1" type="text" rules="required|classroom" />
+            <span class="form-message">Trường này không được để trống</span>
+          </div>
+          <div class="input-1">
+            <label for="email-1">Email</label>
+            <input id="email-1" type="text" rules="required|email" />
+            <span class="form-message">Trường này không được để trống</span>
+          </div>
+          <div class="input-1">
+            <label for="birthday-1">Birthday</label>
+            <input id="birthday-1" type="date" rules="required|birthday" />
+            <span class="form-message">Trường này không được để trống</span>
+          </div>
+          <div class="action">
+            <button
+              class="btn btn-save"
+              id="btn-save"
+              type="submit"
+              onclick="updateStudent()"
+            >
+              Save
+            </button>
+            <button class="btn btn-reset" id="btn-reset" type="reset" onclick="closeUpdate()">
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+      <script src="main.js"></script>
+      <script>
+        const closeUpdate = () => {
+            window.open("index.html");
+        }
+      </script>
+</body>
+</html>

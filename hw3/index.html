@@ -41,11 +41,18 @@
             class="btn btn-save"
             id="btn-save"
             type="submit"
-            onclick="createStudent()"
+            value="create"
+            valueId = ""
+            onclick="createAndUpdate()"
           >
-            Save
+            Create
           </button>
-          <button class="btn btn-reset" id="btn-reset" type="reset">
+          <button
+            class="btn btn-reset"
+            id="btn-reset"
+            type="reset"
+            onclick="clickReset()"
+          >
             Reset
           </button>
         </div>
@@ -67,6 +74,7 @@
         <tbody id="display-data"></tbody>
       </table>
     </div>
+
     <script src="main.js"></script>
   </body>
 </html>

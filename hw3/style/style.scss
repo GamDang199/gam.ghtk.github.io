@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
     form {
         width: 1024px;
         border-bottom: 1px solid $color_border;
@@ -102,6 +103,67 @@ body {
                     background-color: $color_red;
                 }
             }
+        }
+    }
+}
+
+.form-update {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    form {
+        width: 1024px;
+        border-bottom: 1px solid $color_border;
+        border-left : 1px solid $color_border_light;
+        border-right : 1px solid $color_border_light;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       padding: 20px;
+        h2 {
+            background-color: $color_green;
+            color: $color_white;
+            padding: 15px 35px;
+            border-radius: 5px;
+        }
+        .input-1 {
+           display: flex;
+           flex-direction: column; 
+           margin:12px 20px;
+           label {
+                margin-bottom: 7px;
+                margin-top: 10px;
+            }
+            input {
+                padding: 15px;
+                border: none;
+                border-radius: 5px;
+                outline: 1px solid $color_outline;
+            }
+            span.form-message {
+                display: none;
+                color: $color_red;
+                margin-top: 7px;
+            }
+        }
+        .action{
+            margin:12px 20px;
+            .btn {
+                padding: 12px 20px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                font-size: large;
+            }
+                
+            .btn-save {
+                background-color: $color_green;
+                margin-right: 10px;
+            }
+            .btn-reset {
+                background-color: $color_reset;
+            }
+            
         }
     }
 }
