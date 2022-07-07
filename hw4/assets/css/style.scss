@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.dots li.slick-active button {
+    background-color: #ffc600;
+}
+
+.item-bookstore:hover .btn-bookstore{
+    display: flex;
+}
+
+.item-content-teacher:hover .info-contact-teacher{
+    display: block;
+}

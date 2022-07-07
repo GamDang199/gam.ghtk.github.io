@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    
+    <style type="text/tailwindcss">
+      @layer components {
+        .menu-li {
+          @apply p-2 font-bold text-[15px] hover:text-Supernova;
+        }
+        .menu-a {
+          @apply block text-[15px] py-[29px] px-[10px] text-BlueWhale;
+        }
+        
+        .menu-footer-li {
+          @apply text-[18px] font-[400] pt-3 hover:text-Supernova;
+        }
+        
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              BlueWhale: "#07294d",
+              Supernova: "#ffc600",
+              GreenVogue: "#092e56",
+              Seeshell: "#edf0f2",
+              OsloGrey: "#8a8a8a",
+              Rhino: "#24486e",
+              BookStore: "rgba(7, 41, 77, 0.8)",
+              BlueWhaleLight: "rgba(7, 41, 77, 0.9)",
+              CyanBlue: '#021d3a'
+            },
+            padding: {
+              10: "10px",
+              7: "7px",
+              auto: "auto",
+            },
+            fontFamily: {
+              mont: "Montserrat",
+            },
+            transformOrigin: {
+              originBase: 'translate3d(-1010px, 0px, 0px)'
+            }
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header class="header bg-BlueWhale py-10 min-h-[46px] text-[14px]">
+      <div
+        class="md:container mx-auto flex justify-center items-center md:justify-between"
+      >
+        <!-- Header left -->
+        <div class="info-contact hidden md:block text-Seeshell">
+          <span class="pr-5">
+            <i class="fa-regular fa-envelope pr-1"></i>
+            info@yourmail.com
+          </span>
+          <span class="">
+            <i class="fa-solid fa-phone pr-1"></i>
+            +0123 456 789
+          </span>
+        </div>
+
+        <!-- header right -->
+        <div class="follow text-center">
+          <div class="info-follow flex justify-end items-center">
+            <span class="text-Seeshell"> Follow Us: </span>
+            <ul class="menu-ul flex text-Seeshell ml-3">
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="login-register text-Supernova ml-2">
+              <button class="btn-login hover:text-Seeshell">
+                <a href="./register.html">Register</a></button
+              >&nbsp/&nbsp<button class="btn-register hover:text-Seeshell">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Navigation -->
+    <nav>
+      <div
+        class="container mx-auto flex flex-grow items-center justify-center py-5"
+      >
+        <div class="logo flex-2 flex-grow">
+          <a href="#"
+            ><img
+              class="block align-middle w-[175px] h-[60px]"
+              src="./assets/images/image_icon/logo.png"
+              alt="logo Edubin"
+          /></a>
+        </div>
+        <div class="flex-5">
+          <div class="mobile-menu-wrapper md:hidden block menu-a">
+            <span class="mobile-menu-icon"
+              ><i class="fa-solid fa-bars"></i
+            ></span>
+          </div>
+          <div
+            id="dropdownNavbar"
+            type="button"
+            class="pc-menu md:block hidden"
+          >
+            <ul class="md:flex space-x-7 justify-center items-center">
+              <li class="menu-li">
+                <div class="">
+                  <a href="#">
+                    HOME <i class="ml-1 fa-solid fa-angle-down"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">COURSES</li>
+              <li class="menu-li">PAGES</li>
+              <li class="menu-li">EVENTS</li>
+              <li class="menu-li">BLOG</li>
+              <li class="menu-li">SHOP</li>
+              <li class="menu-li">CONTACT</li>
+            </ul>
+          </div>
+        </div>
+        <div class="search-and-cart pl-2">
+          <span class="p-3 font-bold text-[15px]"
+            ><i class="fa fa-search"></i
+          ></span>
+          <span class="p-3 font-bold text-[15px] relative"
+            ><i class="fa fa-shopping-bag"></i>
+            <span
+              class="absolute top-0 right-1 rounded-2xl bg-Supernova text-xs p-1"
+              >0</span
+            ></span
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- End navigation -->
+
+    <!-- Start Slider -->
+    <div class="z-0">
+      <div
+        id="default-carousel"
+        class="slider relative w-full min-w-full h-[750px]"
+        data-carousel="static"
+      >
+        <div class="img-slider overflow-hidden relative w-full h-full">
+          <div
+            class="item-slider duration-700 easeImg w-full h-full overflow-hidden bg-cover"
+            data-carousel-item
+          >
+            <img
+              src="./assets/images/image_icon/slider/student_background.jpg"
+              class="block absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2"
+              alt="..."
+            />
+            <div class="absolute top-0 left-0 w-full h-full bg-BlueWhale/40"></div>
+            <div class="absolute top-[28%] md:left-[10%] left-[5%] right-[15%] text-white">
+              <div class="container mx-auto">
+                <h1 class="title-slide text-[60px] font-[700]">
+                  Choose The Right <br />
+                  Theme for Education
+                </h1>
+                <div class="content-slide">
+                  <p class="leading-8">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Maxime, commodi? Temporibus dicta aliquid eligendi
+                    voluptatum minima animi ipsam, delectus facilis doloremque,
+                    nostrum fugiat cupiditate perspiciatis amet recusandae
+                    pariatur corrupti incidunt?
+                  </p>
+                </div>
+                <div class="btn-slider flex">
+                  <button
+                    class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-extralight bg-Supernova font-mont font-[15px] rounded-[5px] duration-300 hover:bg-BlueWhale hover:text-white"
+                  >
+                    Apply Now
+                  </button>
+                  <button
+                    class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-[400] bg-white font-mont font-[15px] rounded-[5px] duration-300 delay-100 hover:bg-BlueWhale hover:text-white"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="./assets/images/image_icon/slider/slide-2.jpg"
+              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+              alt="..."
+            />
+            <div
+              class="absolute top-0 left-0 w-full h-full bg-BlueWhale/40"
+            ></div>
+          </div>
+          <div class="duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="./assets/images/image_icon/slider/slide-1.jpg"
+              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+              alt="..."
+            />
+            <div
+              class="absolute top-0 left-0 w-full h-full bg-BlueWhale/40"
+            ></div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group group-focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-[50px] sm:h-[50px] border-[1px] border-solid border-Seeshell hover:text-BlueWhale hover:bg-Supernova hover:border-none"
+          >
+            <svg
+              class="w-7 h-7 text-white sm:w-6 sm:h-6 hover:text-BlueWhale"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-[50px] sm:h-[50px] border-[1px] border-solid border-Seeshell hover:text-BlueWhale hover:bg-Supernova hover:border-none"
+          >
+            <svg
+              class="w-7 h-7 text-white sm:w-6 sm:h-6 hover:text-BlueWhale"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+            <span class="hidden">Next</span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- End Slider -->
+
+    <!-- Start Elementor -->
+      <div class="elementor relative w-full h-[250px] z-[9999]">
+        <div class="absolute top-[0] mt-[-160px] left-0 h-[120%] w-full">
+          <div class="w-[80%] mx-auto bg-BlueWhale h-full rounded-[7px] flex text-Seeshell items-center justify-center">
+            <div class="md:w-1/3 px-[45px]"><h2 class="text-left font-[700] text-[36px] font-mont leading-[43px]">Best Platform to Learn Everything</h2></div>
+            <div class="md:w-2/3 h-full bg-amber-300">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Elementor -->
+
+    <!-- Start About -->
+    <div class="about w-full h-[750px]">
+      <div class="container mx-auto">
+        <h5 class="text-[#07294d] font-[700] pb-[12px]">About Us</h5>
+        <div class="w-[50px] h-[3px] bg-Supernova"></div>
+        <div class="flex">
+
+          <!-- Left About -->
+          <div class="about-left flex-1">
+            <h2 class="text-[#000] text-[48px] pt-[10px] font-[700] font-mont">Wellcome To Edubin</h2>
+            
+            <p class="text-gray-600 text-justify pb-[20px] pr-[90px] leading-6 text-mont">Lorem ipsum dolor sit amet consectetur adipisicing elit. In minima, ratione illo totam velit molestias eos suscipit eius laboriosam beatae vel maxime adipisci nemo rem libero dolores, voluptatibus delectus architecto.</p>
+            <p class="text-gray-600 text-justify pb-[20px] pr-[90px] leading-6 text-mont">Lorem ipsum dolor sit amet consectetur adipisicing elit. In minima, ratione illo totam velit molestias eos suscipit eius laboriosam beatae vel maxime adipisci nemo rem libero dolores, voluptatibus delectus architecto.</p>
+            <p class="text-gray-600 text-justify pb-[20px] pr-[90px] leading-6 text-mont">Lorem ipsum dolor sit amet consectetur adipisicing elit. In minima, ratione illo totam velit molestias eos suscipit eius laboriosam beatae vel maxime adipisci nemo rem libero dolores, voluptatibus delectus architecto.</p>
+            <button class="w-[150px] h-[50px] bg-Supernova text-[15px] font-mont rounded-[5px] duration-700 hover:bg-BlueWhale hover:text-Seeshell">Explore More</button>
+          </div>
+
+          <!-- Right About -->
+          <div class="about-right flex-1">
+            <h3 class="title-apply text-[36px] pb-[15px] font-[700] font-mont text-[#000]">Upcoming Events</h3>
+            <ul>
+              <li><div><h4 class="text-[24px] font-mont font-[700] p-[5px] text-[#23252a]">World University Convocation</h4> <span><i class="fa-regular fa-clock"></i> 12:00 AM To 11:59 PM</span></div> </li>
+              <li><div><span><i class="fa fa-calendar"></i></span><h4 class="text-[24px] font-mont font-[700] p-[5px] text-[#23252a]">February Education Conferences</h4> <span><i class="fa-regular fa-clock"></i> 12:00 AM To 11:59 PM</span></div> </li>
+              <li><div><h4 class="text-[24px] font-mont font-[700] p-[5px] text-[#23252a]">The Games Education Summit</h4> <span><i class="fa-regular fa-clock"></i> 12:00 AM To 11:59 PM</span></div> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End About -->
+
+  <!-- Start Apply -->
+    <div class="apply my-10 text-white">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="px-[50px] pt-[45px] pb-[50px] bg-[#07294d]">
+            <h3 class="title-apply text-[30px] pb-[15px] font-[700]">Apply for Fall 2019</h3>
+            <p class="text-[16px] font-[400] leading-[28px] pb-[45px] space-x-3 tracking-wider">Gravida vibh vel velit auctor aliquetn sollicitudirem sem quibibedum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
+            <button class="btn-apply bg-amber-400 text-[#07294d] px-[35px] font-[700] rounded-[5px] leading-[50px] border-solid border border-[#ffc600] hover:bg-[#07294d] hover:text-[#ffc600] hover:border-[#ffc600] ...">Apply Now</button>
+          </div>
+          <div class="px-[50px] pt-[45px] pb-[50px] bg-[#092e56] mt-10 md:mt-0">
+            <h3 class="title-apply text-[30px] pb-[15px] font-[700]">Apply for Scholarship</h3>
+            <p class="text-[16px] font-[400] leading-[28px] pb-[45px] space-x-3 tracking-wider">Sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis gravida nibh vel auctor aliquetn</p>
+            <button class="btn-apply bg-amber-400 text-[#07294d] px-[35px] font-[700] rounded-[5px] leading-[50px] border-solid border border-[#ffc600] hover:bg-[#07294d] hover:text-[#ffc600] hover:border-[#ffc600] ...">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Apply -->
+
+  <!-- Start Featured Courses -->
+    <div class="course bg-[#edf0f2] pt-[65px] pb-[90px]">
+      <div class="container mx-auto">
+        <h5 class="text-[#07294d] font-[700] pb-[12px]">Our Courses</h5>
+        <div class="w-[50px] h-[3px] bg-[#ffc600]"></div>
+        <h2 class="text-[#000] text-[48px] pt-[10px]">Featured Courses</h2>
+        <div class="flex justify-end">
+          <button class="w-[40px] h-[40px] leading-[36px] border-[2px] border-solid border-[#aaaaaa] rounded-[5px] text-[18px] cursor-pointer mr-3 hover:bg-[#ffc600] hover:border-[#ffc600]"><i class="fa-solid fa-angle-left"></i></button>
+          <button class="w-[40px] h-[40px] leading-[36px] border-[2px] border-solid border-[#aaaaaa] rounded-[5px] text-[18px] cursor-pointer hover:bg-[#ffc600] hover:border-[#ffc600]"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="course-slide flex pt-8">
+          <div class="item-course mr-8 pb-10 bg-white rounded-[5px] shadow-cyan-500/50">
+            <div class="thumnail relative">
+              <div class="thum-img overflow-hidden h-[250px]">
+                <img class="transition-all duration-[400] hover:scale-110 w-full h-full" src="./assets/images/image_icon/courses/cu-1.jpg" alt="">
+              </div>
+              <div class="thum-info absolute top-2 left-3 mt-2 ml-2">
+                <span class="bg-[#07294d] text-white font-[400] px-[12px] py-2 rounded-[5px]">Beginner</span>
+                <span class="bg-gray-100 p-[5px] rounded-[3px]"><i class="fa-regular fa-bookmark"></i></span>
+              </div>
+              <div></div>
+            </div>
+            <div class="content-course px-[30px] pt-[20px] pb-[20px]">
+              <div class="star-course flex">
+                <ul class="flex mr-3">
+                  <li><i class="fas fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fas fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fas fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="far fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="far fa-star ml-1 text-[#ffc600]"></i></li>
+                </ul>
+                <span class="text-[13px]">3.60 (5)</span>
+              </div>
+              <h4 class="title-course font-[400] text-[24px] pt-[15px] pb-[20px]">Basic English Speaking and Grammar</h4>
+              <ul class="view-course flex pb-[20px]">
+                <li class="mr-3"><i class="fa-regular fa-user mr-2 text-gray-400"></i><span>173</span></li>
+                <li class="mr-3"><i class="fa-regular fa-clock mr-2 text-gray-400"></i><span> 5h 20m</span></li>
+              </ul>
+              <div class="thum-teacher flex justify-items-center pb-[30px]">
+                <div class="img-teacher mr-3">
+                  <img class="rounded-[50%] w-[40px] h-[40px]" src="./assets/images/image_icon/teachers/teacher_1.jpg" alt="">
+                </div>
+                <div>
+                  <ul class="flex justify-items-center leading-[50px]">
+                    <li class="name-teacher mr-2"> by <b>Mark Alen</b></li>
+                    <li class="subject-course">in <b>Languages</b></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="price-course relative border-solid border-gray-400 border-t-[1px] pb-5">
+                <div class="price absolute top-0 left-0 mt-[30px]">Free</div>
+                <div class="enroll-course absolute top-0 right-0 mt-[30px]">
+                  <i class="fa-solid fa-cart-shopping text-amber-400"></i>
+                  <span class="text-[#B09B71]">Get Enrrolled</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-course mr-8 pb-10 bg-white rounded-[5px] shadow-cyan-500/50">
+            <div class="thumnail relative">
+              <div class="thum-img overflow-hidden h-[250px]">
+                <img class="transition-all duration-[400] hover:scale-110 w-full h-full" src="./assets/images/image_icon/courses/cu-1.jpg" alt="">
+              </div>
+              <div class="thum-info absolute top-2 left-3 mt-2 ml-2">
+                <span class="bg-[#07294d] text-white font-[400] px-[12px] py-2 rounded-[5px]">Beginner</span>
+                <span class="bg-gray-100 p-[5px] rounded-[3px]"><i class="fa-regular fa-bookmark"></i></span>
+              </div>
+              <div></div>
+            </div>
+            <div class="content-course px-[30px] pt-[20px] pb-[20px]">
+              <div class="star-course flex">
+                <ul class="flex mr-3">
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                </ul>
+                <span class="text-[13px]">3.60 (5)</span>
+              </div>
+              <h4 class="title-course font-[400] text-[24px] pt-[15px] pb-[20px]">Basic English Speaking and Grammar</h4>
+              <ul class="view-course flex pb-[20px]">
+                <li class="mr-3"><i class="fa-regular fa-user mr-2 text-gray-400"></i><span>173</span></li>
+                <li class="mr-3"><i class="fa-regular fa-clock mr-2 text-gray-400"></i><span> 5h 20m</span></li>
+              </ul>
+              <div class="thum-teacher flex justify-items-center pb-[30px]">
+                <div class="img-teacher mr-3">
+                  <img class="rounded-[50%] w-[40px] h-[40px]" src="./assets/images/image_icon/teachers/teacher_1.jpg" alt="">
+                </div>
+                <div>
+                  <ul class="flex justify-items-center leading-[50px]">
+                    <li class="name-teacher mr-2"> by <b>Mark Alen</b></li>
+                    <li class="subject-course">in <b>Languages</b></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="price-course relative border-solid border-gray-400 border-t-[1px] pb-5">
+                <div class="price absolute top-0 left-0 mt-[30px]">Free</div>
+                <div class="enroll-course absolute top-0 right-0 mt-[30px]">
+                  <i class="fa-solid fa-cart-shopping text-amber-400"></i>
+                  <span class="text-[#B09B71]">Get Enrrolled</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item-course mr-8 pb-10 bg-white rounded-[5px] shadow-cyan-500/50">
+            <div class="thumnail relative">
+              <div class="thum-img overflow-hidden h-[250px]">
+                <img class="transition-all duration-[400] hover:scale-110 w-full h-full" src="./assets/images/image_icon/courses/cu-1.jpg" alt="">
+              </div>
+              <div class="thum-info absolute top-2 left-3 mt-2 ml-2">
+                <span class="bg-[#07294d] text-white font-[400] px-[12px] py-2 rounded-[5px]">Beginner</span>
+                <span class="bg-gray-100 p-[5px] rounded-[3px]"><i class="fa-regular fa-bookmark"></i></span>
+              </div>
+              <div></div>
+            </div>
+            <div class="content-course px-[30px] pt-[20px] pb-[20px]">
+              <div class="star-course flex">
+                <ul class="flex mr-3">
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                  <li><i class="fa-regular fa-star ml-1 text-[#ffc600]"></i></li>
+                </ul>
+                <span class="text-[13px]">3.60 (5)</span>
+              </div>
+              <h4 class="title-course font-[400] text-[24px] pt-[15px] pb-[20px]">Basic English Speaking and Grammar</h4>
+              <ul class="view-course flex pb-[20px]">
+                <li class="mr-3"><i class="fa-regular fa-user mr-2 text-gray-400"></i><span>173</span></li>
+                <li class="mr-3"><i class="fa-regular fa-clock mr-2 text-gray-400"></i><span> 5h 20m</span></li>
+              </ul>
+              <div class="thum-teacher flex justify-items-center pb-[30px]">
+                <div class="img-teacher mr-3">
+                  <img class="rounded-[50%] w-[40px] h-[40px]" src="./assets/images/image_icon/teachers/teacher_1.jpg" alt="">
+                </div>
+                <div>
+                  <ul class="flex justify-items-center leading-[50px]">
+                    <li class="name-teacher mr-2"> by <b>Mark Alen</b></li>
+                    <li class="subject-course">in <b>Languages</b></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="price-course relative border-solid border-gray-400 border-t-[1px] pb-5">
+                <div class="price absolute top-0 left-0 mt-[30px]">Free</div>
+                <div class="enroll-course absolute top-0 right-0 mt-[30px]">
+                  <i class="fa-solid fa-cart-shopping text-amber-400"></i>
+                  <span class="text-[#B09B71]">Get Enrrolled</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  <!-- End Featured Courses -->
+
+  <!-- Start Facility -->
+    <div class="facility relative w-full h-[700px]">    
+      <div class="bg-img-facility absolute w-full h-full top-0 left-0">
+        <img class="w-full h-full" src="./assets/images/image_icon/bg-1.jpg" alt="">
+      </div>
+      <div class="content-facility absolute top-0 left-0 w-full h-full flex">
+        <div class="flex-1 h-full w-full flex items-center justify-center">
+          <div class="play-video rounded-[50%] w-[100px] h-[100px] bg-amber-300 flex justify-center items-center"><a class="text-white text-[25px] fa-solid fa-play" href="https://www.youtube.com/watch?v=bRRtdzJH1oE"></a></div>
+        </div>
+        <div class="flex-1 bg-[#07284c] h-full w-full opacity-80"></div>
+      </div>
+    </div>
+  <!-- End Facility -->
+
+  <!-- Start Tearchers -->
+    <div class="teacher w-full my-[70px] py-[70px]">
+      <div class="container mx-auto grid md:grid-cols-2 gap-5">
+
+        <!-- Left Content -->
+        <div class="content-teacher-left pb-[70px] sm:pl-[25px]">
+          <div class="title-feedback px-20px">
+            <h5 class="text-[18px] font-mont my-[5px] font-[700]">Teachers</h5>
+            <div class="w-[50px] h-[2px] bg-Supernova"></div>
+            <h2 class="text-[48px] font-mont py-[30px] font-[700]">Meet Our Teachers</h2>
+            <div class="pb-[20px]">
+              <p class="text-gray-600 text-justify pb-[20px] pr-[90px] leading-6 text-mont">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris. </p>
+              <p class="text-gray-600 text-justify pb-[20px] pr-[90px] leading-6 text-mont">Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
+              <p class="text-gray-600 text-justify pb-[20px] pr-[90px] leading-6 text-mont">Buci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
+            </div>
+            <button class="w-[150px] h-[50px] bg-Supernova text-[15px] font-mont rounded-[5px] duration-700 hover:bg-BlueWhale hover:text-Seeshell">Career With Us</button>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-teacher-right grid sm:grid-cols-2 gap-7 mx-auto">
+
+          <!-- item 1 -->
+          <div class="item-content-teacher relative h-[290px] w-[270px]">
+            <div class="img-teacher absolute top-0 left-0 w-full h-full overflow-hidden rounded-[3px]">
+              <img class="w-full h-full" src="./assets/images/image_icon/teachers/teacher_1.jpg" alt="">
+            </div>
+            <div class="absolute left-[50%] bottom-2 translate-x-[-50%] bg-[#f9f9f9] w-[75%] text-center px-[50px] py-[10px]">
+              <h6 class="text-[16px] font-[900] text-BlueWhale">Damian Green</h6>
+              <p class="text-[15px] text-OsloGrey">Chairman</p>
+              <div class="info-contact-teacher hidden">
+                <ul class="flex justify-between items-center">
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- item 2 -->
+          <div class="item-content-teacher relative h-[290px] w-[270px]">
+            <div class="img-teacher absolute top-0 left-0 w-full h-full overflow-hidden rounded-[3px]">
+              <img class="w-full h-full" src="./assets/images/image_icon/teachers/teacher_2.jpg" alt="">
+            </div>
+            <div class="absolute left-[50%] bottom-2 translate-x-[-50%] bg-[#f9f9f9] w-[75%] text-center px-[50px] py-[10px]">
+              <h6 class="text-[16px] font-[900] text-BlueWhale">Damian Green</h6>
+              <p class="text-[15px] text-OsloGrey">Chairman</p>
+              <div class="info-contact-teacher hidden">
+                <ul class="flex justify-between items-center">
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- item 3 -->
+          <div class="item-content-teacher relative h-[290px] w-[270px]">
+            <div class="img-teacher absolute top-0 left-0 w-full h-full overflow-hidden rounded-[3px]">
+              <img class="w-full h-full" src="./assets/images/image_icon/teachers/teacher_3.jpg" alt="">
+            </div>
+            <div class="absolute left-[50%] bottom-2 translate-x-[-50%] bg-[#f9f9f9] w-[75%] text-center px-[50px] py-[10px]">
+              <h6 class="text-[16px] font-[900] text-BlueWhale">Damian Green</h6>
+              <p class="text-[15px] text-OsloGrey">Chairman</p>
+              <div class="info-contact-teacher hidden">
+                <ul class="flex justify-between items-center">
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- item 4 -->
+          <div class="item-content-teacher relative h-[290px] w-[270px]">
+            <div class="img-teacher absolute top-0 left-0 w-full h-full overflow-hidden rounded-[3px]">
+              <img class="w-full h-full" src="./assets/images/image_icon/teachers/teacher_4.jpg" alt="">
+            </div>
+            <div class="absolute left-[50%] bottom-2 translate-x-[-50%] bg-[#f9f9f9] w-[75%] text-center px-[50px] py-[10px]">
+              <h6 class="text-[16px] font-[900] text-BlueWhale">Damian Green</h6>
+              <p class="text-[15px] text-OsloGrey">Chairman</p>
+              <div class="info-contact-teacher hidden">
+                <ul class="flex justify-between items-center">
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li class="hover:text-Supernova font-[700] duration-300"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Teachers -->
+
+  <!-- Start Feedback -->
+    <div class="feedback relative w-full h-[600px] my-[70px]">
+      <div class="bg-img-feedback absolute top-0 left-0 w-full h-full bg-contain">
+        <img class="w-full h-full" src="./assets/images/image_icon/bg_feedback.jpg" alt="" >
+      </div>
+      <div class="content-feedback absolute top-0 left-0 w-full h-full py-[40px] bg-BlueWhaleLight text-Seeshell">
+        <div class="container mx-auto py-[40px]">  
+          <div class="title-feedback px-20px">
+            <h5 class="text-[18px] font-mont my-[5px] font-[700]">Feedback</h5>
+            <div class="w-[50px] h-[2px] bg-Seeshell"></div>
+            <h2 class="text-[48px] font-mont py-[30px] font-[700]">What Students Say</h2>
+          </div>
+          <div class="slide-feedback pt-10">
+            <ul class="ul-feedback">
+              <li class="li-feedback pr-[32px] pt-[30px]">
+                <div class="item-feedback flex">
+                  <div class="content-feedback-left flex-grow relative">
+                    <div class="img-person w-[90px] h-[90px] bg-contain relative">
+                      <img class="absolute top-0 left-0 translate-x-1 translate-y w-full h-full" src="./assets/images/image_icon/student_1.jpg" alt="">
+                      <div class="quote absolute top-0 right-0 mt-[-20px] mr-[-20px] inline-flex rounded-full bg-Supernova w-[50px] h-[50px] justify-center items-center text-2xl"><i class="fas fa-quote-right text-BlueWhale"></i></div>
+                    </div>
+                    
+                  </div>
+                  <div class="content-feedback-right flex-grow ml-10">
+                    <p>I recommend these courses to everyone, and wish you, guys, luck with the new studies! Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <h6 class="name-student-fe font-mont text-[18px] font-[500] pt-[20px] text-white">Monica Blews</h6>
+                    <p class="text-[16px] mt-2">UX Designer</p>
+                  </div>
+                </div>
+              </li>
+              <li class="li-feedback pr-[32px] pt-[30px]">
+                <div class="item-feedback flex">
+                  <div class="content-feedback-left flex-grow relative">
+                    <div class="img-person w-[90px] h-[90px] bg-contain relative">
+                      <img class="absolute top-0 left-0 translate-x-1 translate-y w-full h-full" src="./assets/images/image_icon/student_2.jpg" alt="">
+                      <div class="quote absolute top-0 right-0 mt-[-20px] mr-[-20px]  inline-flex rounded-full bg-Supernova w-[50px] h-[50px] justify-center items-center text-2xl"><i class="fas fa-quote-right text-BlueWhale"></i></div>
+                    </div>
+                    
+                  </div>
+                  <div class="content-feedback-right flex-grow ml-10">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae est eos inventore vero maiores animi vel  neque possimus in expedita! Nobis?</p>
+                    <h6 class="name-student-fe font-mont text-[18px] font-[500] pt-[20px] text-white">James Smith</h6>
+                    <p class="text-[16px] mt-2">Apps Developer</p>
+                  </div>
+                </div>
+              </li>
+              <li class="li-feedback pr-[32px] pt-[30px]">
+                <div class="item-feedback flex">
+                  <div class="content-feedback-left flex-grow relative">
+                    <div class="img-person w-[90px] h-[90px] bg-contain relative">
+                      <img class="absolute top-0 left-0 translate-x-1 translate-y w-full h-full" src="./assets/images/image_icon/student_3.jpg" alt="">
+                      <div class="quote absolute top-0 right-0 mt-[-20px] mr-[-20px]  inline-flex rounded-full bg-Supernova w-[50px] h-[50px] justify-center items-center text-2xl"><i class="fas fa-quote-right text-BlueWhale"></i></div>
+                    </div>
+                    
+                  </div>
+                  <div class="content-feedback-right flex-grow ml-10">
+                    <p>I recommend these courses to everyone, and wish you, guys, luck with the new studies! Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <h6 class="name-student-fe font-mont text-[18px] font-[500] pt-[20px] text-white">Eleanor Baker</h6>
+                    <p class="text-[16px] mt-2">CFO Apple Corp</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Feedback -->
+
+  <!-- Start Book Store -->
+    <div class="bookstore my-[70px] py-[70px] bg-slate-50">
+      <div class="container mx-auto">
+        <div class="title-bookstore px-[20px]">
+          <h5 class="text-[18px] font-mont my-[5px] font-[700]">Book Store</h5>
+          <div class="w-[50px] h-[2px] bg-Supernova"></div>
+          <div class="flex justify-between items-center">
+            <h2 class="text-[48px] font-mont py-[30px] font-[700]">Publications</h2>
+            <div class="py-[30px]"><button class="w-[150px] h-[50px] bg-Supernova text-[15px] font-mont rounded-[5px] duration-700 hover:bg-BlueWhale hover:text-Seeshell">All Products</button></div>
+          </div>
+          <div class="content-bookstore flex justify-evenly w-full flex-nowrap h-[400px] mt-[40px]">
+            
+            <!-- item 1 -->
+            <div class="item-bookstore">
+              <div class="img-bookstore w-[250px] h-[300px] overflow-hidden p-[40px] bg-Seeshell relative">
+                <img class="w-full h-full" src="./assets/images/image_icon/bookstore/book.jpg" alt="">
+                <div class="btn-bookstore absolute top-0 left-0 w-full h-full bg-BookStore hidden justify-center items-center">
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale mr-2"><i class="text-[14px] fa fa-cart-shopping"></i></button>
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale"><i class="text-[14px] fa fa-magnifying-glass"></i></button> 
+                </div>
+              </div>
+              <div class="py-[40px] text-center text-mont font-[1000] text-BlueWhale pb-[40px]">
+                <h6 class="text-[22px] hover:text-Supernova">Book 9</h6>
+                <div class="pb-[40px]"><span>£45</span></div>
+              </div>
+            </div>
+
+            <!-- item 2 -->
+            <div class="item-bookstore">
+              <div class="img-bookstore w-[250px] h-[300px] overflow-hidden p-[40px] bg-Seeshell relative">
+                <img class="w-full h-full" src="./assets/images/image_icon/bookstore/book2.jpg" alt="">
+                <div class="btn-bookstore absolute top-0 left-0 w-full h-full bg-BookStore hidden justify-center items-center">
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale mr-2"><i class="text-[14px] fa fa-cart-shopping"></i></button>
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale"><i class="text-[14px] fa fa-magnifying-glass"></i></button> 
+                </div>
+              </div>
+              <div class="py-[40px] text-center text-mont font-[1000] text-BlueWhale pb-[40px]">
+                <h6 class="text-[22px] hover:text-Supernova">Book 9</h6>
+                <div class="pb-[40px]"><span>£45</span></div>
+              </div>
+            </div>
+
+            <!-- item 3 -->
+            <div class="item-bookstore">
+              <div class="img-bookstore w-[250px] h-[300px] overflow-hidden p-[40px] bg-Seeshell relative">
+                <img class="w-full h-full" src="./assets/images/image_icon/bookstore/book3.jpg" alt="">
+                <div class="btn-bookstore absolute top-0 left-0 w-full h-full bg-BookStore hidden justify-center items-center">
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale mr-2"><i class="text-[14px] fa fa-cart-shopping"></i></button>
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale"><i class="text-[14px] fa fa-magnifying-glass"></i></button> 
+                </div>
+              </div>
+              <div class="py-[40px] text-center text-mont font-[1000] text-BlueWhale pb-[40px]">
+                <h6 class="text-[22px] hover:text-Supernova">Book 9</h6>
+                <div class="pb-[40px]"><span>£45</span></div>
+              </div>
+            </div>
+
+            <!-- item 4 -->
+            <div class="item-bookstore">
+              <div class="img-bookstore w-[250px] h-[300px] overflow-hidden p-[40px] bg-Seeshell relative">
+                <img class="w-full h-full" src="./assets/images/image_icon/bookstore/book4.jpg" alt="">
+                <div class="btn-bookstore absolute top-0 left-0 w-full h-full bg-BookStore hidden justify-center items-center">
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale mr-2"><i class="text-[14px] fa fa-cart-shopping"></i></button>
+                  <button class="border-solid border-[1px] border-Supernova rounded-full w-[40px] h-[40px] text-Supernova text-center hover:bg-Supernova hover:text-BlueWhale"><i class="text-[14px] fa fa-magnifying-glass"></i></button> 
+                </div>
+              </div>
+              <div class="py-[40px] text-center text-mont font-[1000] text-BlueWhale pb-[40px]">
+                <h6 class="text-[22px] hover:text-Supernova">Book 9</h6>
+                <div class="pb-[40px]"><span>£45</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- End Book Store -->
+
+  <!-- Start Latest News -->
+    <div class="latest-news my-[70px]">
+      <div class="container mx-auto">
+        <div class="title-latest-new px-[20px]">
+          <h5 class="text-[18px] font-mont my-[5px] font-[700]">From the News</h5>
+          <div class="w-[50px] h-[2px] bg-Supernova"></div>
+          <h2 class="text-[48px] font-mont py-[30px] font-[700]">Latest News</h2>
+        </div>
+        <div class="content-latest-news-contain flex justify-evenly items-center pt-5">
+
+          <!-- item news 1 -->
+          <div class="item-news pb-10 bg-white rounded-[5px] shadow-cyan-500/50 w-[380px]">
+            <div class="thumnail relative">
+              <div class="thum-img overflow-hidden h-[210px] rounded-[3px]">
+                <img class="transition-all duration-[400] hover:scale-110 w-full h-full" src="./assets/images/image_icon/news/news_image_1.jpeg" alt="">
+              </div>
+            </div>
+            <div class="content-news  pt-[20px] pb-[20px]">
+              <div class="info-news pl-1">
+                <ul class="flex justify-start items-center">
+                  <li class="pr-5"><i class="fa-regular fa-calendar-days text-Supernova pr-2"></i><span class="text-OsloGrey text-[14px]">17 JULY 2019</span></li>
+                  <li class="pr-5"><i class="fa-regular fa-user text-Supernova pr-2"></i><span class="text-OsloGrey text-[14px]">MARK ALEN</span></li>               
+                </ul>
+              </div>
+              <h4 class="title-course font-[700] font-mont text-[24px] text-BlueWhale pt-[15px] pb-[20px] hover:text-Supernova">How to Learn Faster and Remember</h4>
+              <p class="tracking-wider text-justify text-[#505050] text-[16px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero iure illum, autem voluptas delectus vel reprehenderit sequi nobis et sint enim cumque optio repudiandae.</p>
+            </div>
+          </div>
+          
+          <!-- item 2 -->
+          <div class="item-news pb-10 bg-white rounded-[5px] shadow-cyan-500/50 w-[380px]">
+            <div class="thumnail relative">
+              <div class="thum-img overflow-hidden h-[210px] rounded-[3px]">
+                <img class="transition-all duration-[400] hover:scale-110 w-full h-full" src="./assets/images/image_icon/news/news_image_1.jpeg" alt="">
+              </div>
+            </div>
+            <div class="content-news  pt-[20px] pb-[20px]">
+              <div class="info-news pl-1">
+                <ul class="flex justify-start items-center">
+                  <li class="pr-5"><i class="fa-regular fa-calendar-days text-Supernova pr-2"></i><span class="text-OsloGrey text-[14px]">17 JULY 2019</span></li>
+                  <li class="pr-5"><i class="fa-regular fa-user text-Supernova pr-2"></i><span class="text-OsloGrey text-[14px]">MARK ALEN</span></li>               
+                </ul>
+              </div>
+              <h4 class="title-course font-[700] font-mont text-[24px] text-BlueWhale pt-[15px] pb-[20px] hover:text-Supernova">How to Learn Faster and Remember</h4>
+              <p class="tracking-wider text-justify text-[#505050] text-[16px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero iure illum, autem voluptas delectus vel reprehenderit sequi nobis et sint enim cumque optio repudiandae.</p>
+            </div>
+          </div>
+
+          <!-- item 3 -->
+          <div class="item-news pb-10 bg-white rounded-[5px] shadow-cyan-500/50 w-[380px]">
+            <div class="thumnail relative">
+              <div class="thum-img overflow-hidden h-[210px] rounded-[3px]">
+                <img class="transition-all duration-[400] hover:scale-110 w-full h-full" src="./assets/images/image_icon/news/news_image_1.jpeg" alt="">
+              </div>
+            </div>
+            <div class="content-news  pt-[20px] pb-[20px]">
+              <div class="info-news pl-1">
+                <ul class="flex justify-start items-center">
+                  <li class="pr-5"><i class="fa-regular fa-calendar-days text-Supernova pr-2"></i><span class="text-OsloGrey text-[14px]">17 JULY 2019</span></li>
+                  <li class="pr-5"><i class="fa-regular fa-user text-Supernova pr-2"></i><span class="text-OsloGrey text-[14px]">MARK ALEN</span></li>               
+                </ul>
+              </div>
+              <h4 class="title-course font-[700] font-mont text-[24px] text-BlueWhale pt-[15px] pb-[20px] hover:text-Supernova">How to Learn Faster and Remember</h4>
+              <p class="tracking-wider text-justify text-[#505050] text-[16px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero iure illum, autem voluptas delectus vel reprehenderit sequi nobis et sint enim cumque optio repudiandae.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Latest New -->
+
+  <!-- Start Partner Logo -->
+    <div class="partner-logo bg-[#edf0f2] pb-[80px] pt-[40px]">
+      <div class="container mx-auto px-[25px]">
+        <div class="partner-content flex justify-between items-center">
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon1.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon2.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon3.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon4.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon5.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon6.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon7.png" alt="">
+          </div>
+          <div class="partner-content-item">
+            <img src="./assets/images/image_icon/icons/icon8.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Partner Logo  -->
+
+    <!-- Start Footer -->
+    <footer class="footer">
+      <div class="bg-BlueWhale">
+        <div class="container mx-auto footer-top flex tracking-wider text-white pt-[40px] pb-[70px] justify-between items-start">
+          <!-- logo contact footer -->
+          <div class="flex-[3_3_0%] p-5">
+            <img src="./assets/images/image_icon/logo-2.png" alt="" />
+            <p class="text-[16px] mb-[25px] leading-10 font-[400] mt-[25px]">
+              Gravida nibh vel velit auctor aliquetn quibibendum auci elit cons
+              equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
+              vulputate.
+            </p>
+            <div class="flex space-x-4 items-center text-xl">
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#" class="text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+              </span>
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </span>
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+              </span>
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </span>
+            </div>
+          </div>
+
+          <!-- sitemap -->
+          <div class="flex-[3_3_0%] p-5">
+            <h6 class="text-[25px] pb-[20px] font-[700]">Sitemap</h6>
+            <div class="flex text-xl">
+              <ul class="flex-1">
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">Home</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">About us</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">Courses</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">News</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">Event</a></li>
+              </ul>
+              <ul class="flex-1">
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Gallery</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Shop</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Teachers</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Support</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Contact</a></li>
+  
+              </ul>
+            </div>
+          </div>
+
+          <!-- support -->
+          <div class="flex-[2_2_0%] p-5">
+            <h6 class="text-[25px] pb-[20px] font-[700]">Support</h6>
+            <ul class="text-xl">
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">FAQS</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#"></i>Pricacy</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Policy</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Support</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Documentation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="flex-[3_3_0%] p-5">
+            <h6 class="text-[25px] pb-[20px] font-[700]">Contact Us</h6>
+            <div class="flex flex-row pt-5">
+              <div><i class="fa-solid fa-house-chimney text-Supernova mr-5 text-[16px]"></i></div>
+              <div class="text-xl font-[400]">
+                143 castle road 517 district, kiyev port south Canada
+              </div>
+            </div>
+            <div class="flex items-center pt-5">
+              <div><i class="fa-solid fa-phone text-Supernova mr-5 text-[16px]"></i></div>
+              <p class="text-xl font-[400]">
+                +3 123 456 789
+             </p>
+            </div>
+            <div class="flex items-center pt-5">
+              <div><i class="fa-regular fa-envelope text-Supernova mr-5 text-[16px]"></i></div>
+              <p class="text-[16px] font-[400]">
+                info@yourmail.com
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- footer botom -->
+      <div
+        class="footer-bottom flex bg-[#021d3a] p-[28px] text-white text-[18px] tracking-wider"
+      >
+        <div class="flex-1 text-center font-[500]">
+          © Copyrights 2020 Edubin All rights reserved.
+        </div>
+        <div class="flex-1 text-right pr-[50px]">Designed by <b class="font-[1000]">Pixelcurve</b></div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
