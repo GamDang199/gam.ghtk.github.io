@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto&display=swap"
@@ -16,19 +16,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <style type="text/tailwindcss">
-      @layer components {
-        .menu-li {
-          @apply p-2 font-bold text-[15px] hover:text-Supernova;
-        }
-        .menu-a {
-          @apply block text-[15px] py-[29px] px-[10px] text-BlueWhale;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/register.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <script>
       tailwind.config = {
         theme: {
@@ -40,68 +30,351 @@
               Seeshell: "#edf0f2",
               OsloGrey: "#8a8a8a",
               Rhino: "#24486e",
+              BookStore: "rgba(7, 41, 77, 0.8)",
+              BlueWhaleLight: "rgba(7, 41, 77, 0.9)",
+              CyanBlue: "#021d3a",
             },
             padding: {
               10: "10px",
               7: "7px",
               auto: "auto",
             },
+            fontFamily: {
+              mont: "Montserrat",
+            },
+            transformOrigin: {
+              originBase: "translate3d(-1010px, 0px, 0px)",
+            },
           },
         },
       };
     </script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header class="header bg-BlueWhale py-10 min-h-[46px] text-[14px]">
+      <div
+        class="md:container mx-auto flex justify-center items-center md:justify-between"
+      >
+        <!-- Header left -->
+        <div class="info-contact hidden md:block text-Seeshell">
+          <span class="pr-5">
+            <i class="fa-regular fa-envelope pr-1"></i>
+            info@yourmail.com
+          </span>
+          <span class="">
+            <i class="fa-solid fa-phone pr-1"></i>
+            +0123 456 789
+          </span>
+        </div>
+
+        <!-- header right -->
+        <div class="follow text-center">
+          <div class="info-follow flex justify-end items-center">
+            <span class="text-Seeshell"> Follow Us: </span>
+            <ul class="menu-ul flex text-Seeshell ml-3">
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li class="menu-li px-7 hover:text-Supernova ...">
+                <a href="#">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="login-register text-Supernova ml-2">
+              <button class="btn-login hover:text-Seeshell">
+                <a href="./register.html">Register</a></button
+              >&nbsp/&nbsp<button class="btn-register hover:text-Seeshell">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Navigation -->
+    <nav>
+      <div
+        class="container mx-auto flex flex-grow items-center justify-center py-5"
+      >
+        <div class="logo flex-2 flex-grow">
+          <a href="#"
+            ><img
+              class="block align-middle w-[175px] h-[60px]"
+              src="./assets/images/image_icon/logo.png"
+              alt="logo Edubin"
+          /></a>
+        </div>
+        <div class="flex-5">
+          <div class="mobile-menu-wrapper md:hidden block menu-a">
+            <span class="mobile-menu-icon"
+              ><i class="fa-solid fa-bars"></i
+            ></span>
+          </div>
+          <div
+            id="dropdownNavbar"
+            type="button"
+            class="pc-menu md:block hidden"
+          >
+            <ul class="md:flex space-x-7 justify-center items-center">
+              <li class="menu-li">
+                <div class="">
+                  <a href="#">
+                    HOME <i class="ml-1 fa-solid fa-angle-down"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">COURSES</li>
+              <li class="menu-li">PAGES</li>
+              <li class="menu-li">EVENTS</li>
+              <li class="menu-li">BLOG</li>
+              <li class="menu-li">SHOP</li>
+              <li class="menu-li">CONTACT</li>
+            </ul>
+          </div>
+        </div>
+        <div class="search-and-cart pl-2">
+          <span class="p-3 font-bold text-[15px]"
+            ><i class="fa fa-search"></i
+          ></span>
+          <span class="p-3 font-bold text-[15px] relative"
+            ><i class="fa fa-shopping-bag"></i>
+            <span
+              class="absolute top-0 right-1 rounded-2xl bg-Supernova text-xs p-1"
+              >0</span
+            ></span
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- End navigation -->
     
-<nav class="px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
-      <a href="#" class="flex items-center">
-          <img src="/docs/images/logo.svg" class="h-6 mr-3 sm:h-10" alt="Flowbite Logo">
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-      </a>
-      <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center justify-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500" aria-controls="mobile-menu-2" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-          <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
-          </li>
-          <li>
-              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Dropdown <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
-              <!-- Dropdown menu -->
-              <div id="dropdownNavbar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(745.802px, 2468.7px, 0px);">
-                  <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                    <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                    </li>
-                  </ul>
-                  <div class="py-1">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
-                  </div>
-              </div>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Services</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Pricing</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Contact</a>
-          </li>
-        </ul>
+    <!-- Start Main -->
+    <div class="main mt-[40px] bg-slate-400">
+      <div class="md:container mx-auto">
+        <form id="form" class="grid md:grid-cols-2 grid-cols-1 py-[40px] px-[40px]">
+          <div class="firstname mx-5 mt-5">
+            <label for="firstname" class="block my-2 font-mont font-[500]"
+              >First Name</label
+            >
+            <input
+              id="firstname"
+              class="form-control py-2 px-5 w-full rounded-[3px] border-solid border-[1px] border-OsloGrey mb-1 focus:outline-OsloGrey"
+              name="firstname"
+              placeholder="First Name"
+              type="text"
+            />
+            <span class="text-[red] font-mont text-[12px] mb-7"></span>
+          </div>
+          <div class="lastname mx-5 mt-5">
+            <label for="lastname" class="block my-2 font-mont font-[500]"
+              >Last Name</label
+            >
+            <input
+              id="lastname"
+              class="form-control py-2 px-5 w-full rounded-[3px] border-solid border-[1px] border-OsloGrey mb-1 focus:outline-OsloGrey"
+              name="lastname"
+              placeholder="Last Name"
+              type="text"
+            />
+            <span class="text-[red] font-mont text-[12px] mb-7"></span>
+          </div>
+          <div class="username mx-5 mt-5">
+            <label for="username" class="block my-2 font-mont font-[500]"
+              >User Name</label
+            >
+            <input
+              id="username"
+              class="form-control py-2 px-5 w-full rounded-[3px] border-solid border-[1px] border-OsloGrey mb-1 focus:outline-OsloGrey"
+              name="username"
+              placeholder="User Name"
+              type="text"
+            />
+            <span class="text-[red] font-mont text-[12px] mb-7"></span>
+          </div>
+          <div class="email mx-5 mt-5">
+            <label for="email" class="block my-2 font-mont font-[500]"
+              >E-Mail</label
+            >
+            <input
+              id="email"
+              class="form-control py-2 px-5 w-full rounded-[3px] border-solid border-[1px] border-OsloGrey mb-1 focus:outline-OsloGrey"
+              name="email"
+              placeholder="Email"
+              type="text"
+            />
+            <span class="text-[red] font-mont text-[12px] mb-7"></span>
+          </div>
+          <div class="password mx-5 mt-5">
+            <label for="password" class="block my-2 font-mont font-[500]"
+              >Password</label
+            >
+            <input
+              id="password"
+              class="form-control py-2 px-5 w-full rounded-[3px] border-solid border-[1px] border-OsloGrey mb-1 focus:outline-OsloGrey"
+              name="password"
+              placeholder="Password"
+              type="password"
+            />
+            <span class="text-[red] font-mont text-[12px] mb-7"></span>
+          </div>
+          <div class="confirm-password mx-5 mt-5">
+            <label
+              for="confirm-password"
+              class="block my-2 font-mont font-[500]"
+              >Confirmation Password</label
+            >
+            <input
+              id="confirmPassword"
+              class="form-control py-2 px-5 w-full rounded-[3px] border-solid border-[1px] border-OsloGrey mb-1 focus:outline-OsloGrey"
+              name="confirm-password"
+              placeholder="Confirm Password"
+              type="password"
+            />
+            <span class="text-[red] font-mont text-[12px] mb-7"></span>
+          </div>
+          <div
+            class="register col-start-2 col-span-1 mx-5 my-5 text-right pr-5"
+          >
+            <button
+              class="btn-register bg-BlueWhale py-3 px-[28px] rounded-[3px] text-white font-[400]"
+            >
+              Register
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </nav>
+    <!-- End Main -->
+
+    <!-- Start Footer -->
+    <footer class="footer">
+      <div class="bg-BlueWhale">
+        <div class="container mx-auto footer-top md:flex tracking-wider text-white pt-[40px] pb-[70px] justify-between items-start">
+          <!-- logo contact footer -->
+          <div class="flex-[3_3_0%] p-5">
+            <img src="./assets/images/image_icon/logo-2.png" alt="" />
+            <p class="text-[16px] mb-[25px] leading-10 font-[400] mt-[25px]">
+              Gravida nibh vel velit auctor aliquetn quibibendum auci elit cons
+              equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
+              vulputate.
+            </p>
+            <div class="flex space-x-4 items-center text-xl">
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#" class="text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+              </span>
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </span>
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+              </span>
+              <span class="bg-CyanBlue rounded-full px-4 py-2 hover:bg-Supernova ...">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </span>
+            </div>
+          </div>
+
+          <!-- sitemap -->
+          <div class="flex-[3_3_0%] p-5">
+            <h6 class="text-[25px] pb-[20px] font-[700]">Sitemap</h6>
+            <div class="flex text-xl">
+              <ul class="flex-1">
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">Home</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">About us</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">Courses</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">News</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-Supernova"></i><a class="hover:ml-5 duration-1000" href="#">Event</a></li>
+              </ul>
+              <ul class="flex-1">
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Gallery</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Shop</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Teachers</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Support</a></li>
+                <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Contact</a></li>
   
-</body>
+              </ul>
+            </div>
+          </div>
+
+          <!-- support -->
+          <div class="flex-[2_2_0%] p-5">
+            <h6 class="text-[25px] pb-[20px] font-[700]">Support</h6>
+            <ul class="text-xl">
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">FAQS</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#"></i>Pricacy</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Policy</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Support</a></li>
+              <li class="menu-footer-li"><i class="fa fa-angle-right mr-3 text-amber-400"></i><a class="hover:ml-5 duration-1000" href="#">Documentation</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="flex-[3_3_0%] p-5">
+            <h6 class="text-[25px] pb-[20px] font-[700]">Contact Us</h6>
+            <div class="flex flex-row pt-5">
+              <div><i class="fa-solid fa-house-chimney text-Supernova mr-5 text-[16px]"></i></div>
+              <div class="text-xl font-[400]">
+                143 castle road 517 district, kiyev port south Canada
+              </div>
+            </div>
+            <div class="flex items-center pt-5">
+              <div><i class="fa-solid fa-phone text-Supernova mr-5 text-[16px]"></i></div>
+              <p class="text-xl font-[400]">
+                +3 123 456 789
+             </p>
+            </div>
+            <div class="flex items-center pt-5">
+              <div><i class="fa-regular fa-envelope text-Supernova mr-5 text-[16px]"></i></div>
+              <p class="text-[16px] font-[400]">
+                info@yourmail.com
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- footer botom -->
+      <div
+        class="footer-bottom flex bg-[#021d3a] p-[28px] text-white text-[18px] tracking-wider"
+      >
+        <div class="flex-1 text-center font-[500]">
+          © Copyrights 2020 Edubin All rights reserved.
+        </div>
+        <div class="flex-1 text-right pr-[50px]">Designed by <b class="font-[1000]">Pixelcurve</b></div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+  ></script>
+    <script src="./assets/js/register.js"></script>
+    
+  </body>
 </html>

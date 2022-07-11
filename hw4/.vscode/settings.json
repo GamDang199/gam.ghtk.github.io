@@ -1,7 +1,12 @@
 {
     "liveServer.settings.port": 5501,
     "cSpell.words": [
+        "elementor",
+        "firstname",
+        "lastname",
         "Seeshell",
-        "tailwindcss"
+        "tailwindcss",
+        "thum",
+        "thumnail"
     ]
 }

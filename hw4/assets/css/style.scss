@@ -5,6 +5,58 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #557495;
+    z-index: 10;
+    visibility: hidden;
+}
+.slick-prev::after {
+    content: '<';
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50%;
+    background-color: #557495;
+}
+
+.slick-next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #557495;
+    z-index: 10;
+    visibility: hidden;
+}
+
+
+.slick-next::after {
+    content: '>';
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    color: #fff;
+    background-color: #557495;
+    padding: 12px 20px;
+    border-radius: 50%;
+}
+
+.slick-next:hover::after{
+    background-color: #ffc600; 
+}
+
+.slick-prev:hover::after{
+    background-color: #ffc600; 
+}
+
 .dots {
     display: flex;
     justify-content: center;
@@ -22,4 +74,8 @@
 
 .item-content-teacher:hover .info-contact-teacher{
     display: block;
+}
+
+.video {
+    background-color: rbga(26, 28, 27, 0.8);
 }
