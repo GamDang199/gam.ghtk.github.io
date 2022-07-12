@@ -39,7 +39,7 @@ const checkEmail = (input) => {
     input.value = input.value.trim();
     let isEmailError = !regexEmail.test(input.value);
     if(regexEmail.test(input.value)) {
-        showSuccess(input.value);
+        showSuccess(input);
     } else {
         showError(email, 'Email khong dung dinh dang');
     }
@@ -52,16 +52,35 @@ const checkLength = (input, min) => {
         showError(input, `Phai co it nhat ${min} ky tu`);
         return true;
     }
-    showSuccess();
+    showSuccess(input);
     return false;
 }
 
 const checkMatchPassword = (passwordInput, cPasswordInput) => {
+    console.log(passwordInput);
+    console.log(cPasswordInput);
     if(passwordInput.value.trim() !== cPasswordInput.value.trim()) {
         showError(cPasswordInput, 'Mat khau khong trung khop');
         return true;
     }
     return false;
+}
+
+const checkDataBlur = (input) => {
+    
+   $(`#${input.id}`).blur(() => {
+    if(input.value == "") {
+        showError(input, "Khong duoc de trong")
+    } else {
+        showSuccess(input)
+    }
+   })
+}
+
+const checkDataChange = (input) => {
+    $(`#${input.id}`).on('input',(e) => {
+        showSuccess(input);
+    })
 }
 
 form.addEventListener('submit', (e) => {
@@ -70,4 +89,22 @@ form.addEventListener('submit', (e) => {
     let isEmailError = checkEmail(email);
     let checkLengthPassword = checkLength(password, 8);
     let isMatchPass = checkMatchPassword(password, confirmPassword);
+    
 })
+
+window.onload = (e) => {
+    checkDataBlur(firstname);
+    checkDataBlur(lastname);
+    checkDataBlur(username);
+    checkDataBlur(email);
+    checkDataBlur(password);
+    checkDataBlur(confirmPassword);
+    checkDataChange(firstname);
+    checkDataChange(lastname);
+    checkDataChange(username);
+    checkDataChange(email);
+    checkDataChange(password);
+    checkDataChange(confirmPassword);
+}
+
+

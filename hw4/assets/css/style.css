@@ -77,5 +77,32 @@
 }
 
 .video {
-  background-color: rbga(26, 28, 27, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slick-list.draggable {
+  height: 100%;
+}
+.slick-list.draggable .slick-track {
+  height: 100%;
+}
+
+.slider {
+  transition: all 5s linear 1s;
+}
+
+.preSlider {
+  display: none;
+  transition: 4s;
+}
+
+.nextSlider {
+  display: none;
+}
+
+.containSlider:hover .preSlider {
+  display: block;
+}
+.containSlider:hover .nextSlider {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

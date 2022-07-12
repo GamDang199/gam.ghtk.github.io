@@ -21,10 +21,7 @@
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
       />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"
-    />
+    
     <link rel="stylesheet" href="./assets/css/style.css" />
     
     <style type="text/tailwindcss">
@@ -141,6 +138,7 @@
       <div
         class="container mx-auto flex flex-grow items-center justify-center py-5"
       >
+        <!-- logo -->
         <div class="logo flex-2 flex-grow">
           <a href="#"
             ><img
@@ -149,6 +147,8 @@
               alt="logo Edubin"
           /></a>
         </div>
+
+        <!-- menu -->
         <div class="flex-5">
           <div class="mobile-menu-wrapper md:hidden block menu-a">
             <span class="mobile-menu-icon"
@@ -197,129 +197,136 @@
     <!-- End navigation -->
 
     <!-- Start Slider -->
-    <div class="z-0">
-      <div
-        id="default-carousel"
-        class="slider relative w-full min-w-full h-[750px]"
-        data-carousel="static"
-      >
-        <div class="img-slider overflow-hidden relative w-full h-full">
-          <div
-            class="item-slider duration-700 easeImg w-full h-full overflow-hidden bg-cover"
-            data-carousel-item
-          >
-            <img
-              src="./assets/images/image_icon/slider/student_background.jpg"
-              class="block absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2"
-              alt="..."
-            />
-            <div class="absolute top-0 left-0 w-full h-full bg-BlueWhale/40"></div>
-            <div class="absolute top-[28%] md:left-[10%] left-[5%] right-[15%] text-white">
-              <div class="container mx-auto">
-                <h1 class="title-slide text-[60px] font-[700]">
-                  Choose The Right <br />
-                  Theme for Education
-                </h1>
-                <div class="content-slide">
-                  <p class="leading-8">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Maxime, commodi? Temporibus dicta aliquid eligendi
-                    voluptatum minima animi ipsam, delectus facilis doloremque,
-                    nostrum fugiat cupiditate perspiciatis amet recusandae
-                    pariatur corrupti incidunt?
-                  </p>
-                </div>
-                <div class="btn-slider flex">
-                  <button
-                    class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-extralight bg-Supernova font-mont font-[15px] rounded-[5px] duration-300 hover:bg-BlueWhale hover:text-white"
-                  >
-                    Apply Now
-                  </button>
-                  <button
-                    class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-[400] bg-white font-mont font-[15px] rounded-[5px] duration-300 delay-100 hover:bg-BlueWhale hover:text-white"
-                  >
-                    Learn More
-                  </button>
-                </div>
-              </div>
+    <div class="containSlider w-full h-[750px] z-10 relative">
+      <div class="slider w-full h-full">
+        <!-- item 1 -->
+      <div class="item-slider w-full h-full relative">
+        <div class="img-slider absolute top-0 left-0 w-full h-full">
+          <img class="w-full h-full" src="./assets/images/image_icon/slider/slide-1.jpg" alt="">
+        </div>
+        <div class="content-slider absolute top-0 left-0 w-full h-full bg-BlueWhale/40">
+          <div class="content-slide container mx-auto mt-[10%] text-white">
+            <h1 class="title-slide text-[60px] font-[700]">
+              Choose The Right <br />
+              Theme for Education
+            </h1>
+            <div class="content-slide">
+              <p class="leading-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maxime, commodi? Temporibus dicta aliquid eligendi
+                voluptatum minima animi ipsam, delectus facilis doloremque,
+                nostrum fugiat cupiditate perspiciatis amet recusandae
+                pariatur corrupti incidunt?
+              </p>
+            </div>
+            <div class="btn-slider flex">
+              <button
+                class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-extralight bg-Supernova font-mont font-[15px] rounded-[5px] duration-300 hover:bg-BlueWhale hover:text-white"
+              >
+                Apply Now
+              </button>
+              <button
+                class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-[400] bg-white font-mont font-[15px] rounded-[5px] duration-300 delay-100 hover:bg-BlueWhale hover:text-white"
+              >
+                Learn More
+              </button>
             </div>
           </div>
-          <div class="duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="./assets/images/image_icon/slider/slide-2.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-              alt="..."
-            />
-            <div
-              class="absolute top-0 left-0 w-full h-full bg-BlueWhale/40"
-            ></div>
-          </div>
-          <div class="duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="./assets/images/image_icon/slider/slide-1.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-              alt="..."
-            />
-            <div
-              class="absolute top-0 left-0 w-full h-full bg-BlueWhale/40"
-            ></div>
+        </div>
+      </div>
+
+      <!-- item 2 -->
+      <div class="item-slider w-full h-full relative">
+        <div class="img-slider absolute top-0 left-0 w-full h-full">
+          <img class="w-full h-full" src="./assets/images/image_icon/slider/slide-2.jpg" alt="">
+        </div>
+        <div class="content-slider absolute top-0 left-0 w-full h-full bg-BlueWhale/40">
+          <div class="container mx-auto mt-[10%] text-white">
+            <h1 class="title-slide text-[60px] font-[700]">
+              Choose The Right <br />
+              Theme for Education
+            </h1>
+            <div class="content-slide">
+              <p class="leading-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maxime, commodi? Temporibus dicta aliquid eligendi
+                voluptatum minima animi ipsam, delectus facilis doloremque,
+                nostrum fugiat cupiditate perspiciatis amet recusandae
+                pariatur corrupti incidunt?
+              </p>
+            </div>
+            <div class="btn-slider flex">
+              <button
+                class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-extralight bg-Supernova font-mont font-[15px] rounded-[5px] duration-300 hover:bg-BlueWhale hover:text-white"
+              >
+                Apply Now
+              </button>
+              <button
+                class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-[400] bg-white font-mont font-[15px] rounded-[5px] duration-300 delay-100 hover:bg-BlueWhale hover:text-white"
+              >
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
-        <button
-          type="button"
-          class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group group-focus:outline-none"
-          data-carousel-prev
-        >
-          <span
-            class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-[50px] sm:h-[50px] border-[1px] border-solid border-Seeshell hover:text-BlueWhale hover:bg-Supernova hover:border-none"
-          >
-            <svg
-              class="w-7 h-7 text-white sm:w-6 sm:h-6 hover:text-BlueWhale"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              ></path>
-            </svg>
-          </span>
-        </button>
-        <button
-          type="button"
-          class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-          data-carousel-next
-        >
-          <span
-            class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-[50px] sm:h-[50px] border-[1px] border-solid border-Seeshell hover:text-BlueWhale hover:bg-Supernova hover:border-none"
-          >
-            <svg
-              class="w-7 h-7 text-white sm:w-6 sm:h-6 hover:text-BlueWhale"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-            <span class="hidden">Next</span>
-          </span>
-        </button>
       </div>
+
+      <!-- item 3 -->
+      <div class="item-slider w-full h-full relative">
+        <div class="img-slider absolute top-0 left-0 w-full h-full">
+          <img class="w-full h-full" src="./assets/images/image_icon/slider/student_background.jpg" alt="">
+        </div>
+        <div class="content-slider absolute top-0 left-0 w-full h-full bg-BlueWhale/40">
+          <div class="container mx-auto mt-[10%] text-white">
+            <h1 class="title-slide text-[60px] font-[700]">
+              Choose The Right <br />
+              Theme for Education
+            </h1>
+            <div class="content-slide">
+              <p class="leading-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Maxime, commodi? Temporibus dicta aliquid eligendi
+                voluptatum minima animi ipsam, delectus facilis doloremque,
+                nostrum fugiat cupiditate perspiciatis amet recusandae
+                pariatur corrupti incidunt?
+              </p>
+            </div>
+            <div class="btn-slider flex">
+              <button
+                class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-extralight bg-Supernova font-mont font-[15px] rounded-[5px] duration-300 hover:bg-BlueWhale hover:text-white"
+              >
+                Apply Now
+              </button>
+              <button
+                class="btn-slider-1 text-BlueWhale m-[7px] px-[21px] py-[12px] font-[400] bg-white font-mont font-[15px] rounded-[5px] duration-300 delay-100 hover:bg-BlueWhale hover:text-white"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <div
+        class="preSlider hidden absolute top-[50%] left-0 z-40  px-4  cursor-pointer group group-focus:outline-none"
+      >
+        <span
+          class="inline-flex text-white justify-center items-center w-8 h-8 rounded-full sm:w-[50px] sm:h-[50px] border-[1px] border-solid border-Seeshell hover:text-BlueWhale hover:bg-Supernova hover:border-none"
+        ><i class="fa-solid fa-angle-left"></i></span>
+    </div>
+      <div
+        class="nextSlider absolute top-[50%] right-0 z-40  px-4  cursor-pointer group group-focus:outline-none"
+      >
+        <span
+          class="inline-flex text-white justify-center items-center w-8 h-8 rounded-full sm:w-[50px] sm:h-[50px] border-[1px] border-solid border-Seeshell hover:text-BlueWhale hover:bg-Supernova hover:border-none"
+        ><i class="fa-solid fa-angle-right"></i></span>
+    </div>
     </div>
     <!-- End Slider -->
 
     <!-- Start Elementor -->
-      <div class="elementor relative w-full h-[250px] z-20">
+      <div class="elementor relative w-full h-[350px] md:h-[250px] z-20">
         <div class="absolute top-0 mt-[-160px] left-0 h-[120%] w-full">
           <div class="w-[80%] mx-auto bg-BlueWhale h-full rounded-[7px] md:flex text-Seeshell items-center justify-center">
             <div class="md:w-1/3 px-[45px] py-5"><h2 class="text-left font-[700] text-[36px] font-mont leading-[43px]">Best Platform to Learn Everything</h2></div>
@@ -467,7 +474,45 @@
           <div class="play-video rounded-[50%] w-[100px] h-[100px] bg-amber-300 flex justify-center items-center"><button class="displayVideo text-white text-[25px] fa-solid fa-play" href="#">
           </button></div>
         </div>
-        <div class="flex-1 bg-[#07284c] h-full w-full opacity-80"></div>
+        <div class="flex-1 bg-[#07284c] h-full w-full opacity-80">
+          <div class="text-white pt-[100px] px-[80px]">
+            <h2 class="text-[40px] font-[900] font-mont">Our Facilities</h2>
+
+            <!-- Certificate -->
+            <div class="pt-[60px] flex">
+              <div class="pr-9">
+                <img src="./assets/images/image_icon/facilites_certificate.png" alt="">
+              </div>
+              <div class="">
+                <h5 class="text-[20px] font-mont font-[900]">Global Certificate</h5>
+                <p class="pt-2 font-[400]">Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+              </div>
+            </div>
+
+            <!-- Support -->
+            <div class="pt-[60px] flex">
+              <div class="pr-9">
+                <img src="./assets/images/image_icon/facilites_support.png" alt="">
+              </div>
+              <div>                
+                <h5 class="text-[20px] font-mont font-[900]">Alumni Support</h5>
+                <p class="pt-2 font-[400]">Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>              
+              </div>
+            </div>
+
+            <!-- Book -->
+            <div class="pt-[60px] flex">
+              <div class="pr-9">
+                <img src="./assets/images/image_icon/facilites_book.png" alt="">
+              </div>
+              <div>
+                <h5 class="text-[20px] font-mont font-[900]">Books & Library</h5>
+                <p class="pt-2 font-[400]">Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
   <!-- End Facility -->
@@ -929,8 +974,6 @@
       </div>
     </footer>
     <!-- End Footer -->
-
-    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
     type="text/javascript"
