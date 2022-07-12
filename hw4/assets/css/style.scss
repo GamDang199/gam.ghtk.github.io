@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .slick-prev {
@@ -111,6 +112,35 @@
     }
 }
 
+.page-up {
+    opacity: 0;
+    z-index: -99;
+    transition: .6s !important;
+}
+
+.page-up >a>i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+}
 
 
+
+
+@keyframes fixed-header {
+    from{
+        top:-20%;
+    }
+    to{
+        top:0;
+    }
+}
+
+@keyframes identifier {
+    
+}
 

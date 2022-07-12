@@ -6,7 +6,7 @@ $(document).ready(() => {
     draggable: true,
     autoplaySpeed: 2000,
     fade: true,
-    cssEase: 'linear',
+    cssEase: "linear",
     autoplay: true,
     prevArrow: $(".preSlider"),
     nextArrow: $(".nextSlider"),
@@ -78,6 +78,35 @@ $(document).ready(() => {
   });
 });
 
+$(window).scroll((e) => {
+  let screenLen = window.scrollY;
+  if (screenLen >= 170) {
+    $('.page-up').css({
+      "opacity" : "1",
+      "z-index": "999999"
+    });
+
+    $("nav").css({
+      position: "fixed",
+      top: "0",
+      left: "0",
+      "z-index": "999999",
+      width: "100%",
+      animation: "fixed-header 1s ease-in-out",
+    });
+  } else {
+
+    $('.page-up').css({
+      "opacity" : "0",
+      "z-index": "-99"
+    })
+    
+    $("nav").css({
+      position: "relative",
+      animation: "",
+    });
+  }
+});
 
 $(".displayVideo").click((e) => {
   $(".video").css({
