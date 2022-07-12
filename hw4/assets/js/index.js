@@ -108,6 +108,7 @@ $(window).scroll((e) => {
   }
 });
 
+
 $(".displayVideo").click((e) => {
   $(".video").css({
     display: "block",

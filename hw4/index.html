@@ -138,7 +138,7 @@
     <!-- End Header -->
 
     <!-- Navigation -->
-    <nav class="nav bg-white">
+    <nav class="nav bg-white relative">
       <div
         class="container mx-auto flex flex-grow items-center justify-center py-5"
       >
@@ -161,26 +161,80 @@
           </div>
           <div
             id="dropdownNavbar"
-            type="button"
-            class="pc-menu md:block hidden"
+            class="absolute left-0 right-0 top-full transition-all duration-300 ease-out md:relative bg-white pc-menu  z-50 overflow-hidden md:overflow-visible"
           >
             <ul class="md:flex space-x-7 justify-center items-center">
+              <li></li>
               <li class="menu-li">
-                <div class="">
+                <div class="flex justify-between">
                   <a href="#">
-                    HOME <i class="ml-1 fa-solid fa-angle-down"></i>
+                    HOME <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
                   </a>
                   <span class="md:hidden block"
                     ><i class="fa-solid fa-plus"></i
                   ></span>
                 </div>
               </li>
-              <li class="menu-li">COURSES</li>
-              <li class="menu-li">PAGES</li>
-              <li class="menu-li">EVENTS</li>
-              <li class="menu-li">BLOG</li>
-              <li class="menu-li">SHOP</li>
-              <li class="menu-li">CONTACT</li>
+              <li class="menu-li">
+                <div class="flex justify-between">
+                  <a href="#">
+                    COURSES <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">
+                <div class="flex justify-between">
+                  <a href="#">
+                    PAGES <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">
+                <div class="flex justify-between">
+                  <a href="#">
+                    EVENTS <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">
+                <div class="flex justify-between">
+                  <a href="#">
+                    BLOG <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">
+                <div class="flex justify-between">
+                  <a href="#">
+                    SHOP <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
+              <li class="menu-li">
+                <div class="flex justify-between">
+                  <a href="#">
+                    CONTACT <i class="ml-1 fa-solid fa-angle-down hidden md:block"></i>
+                  </a>
+                  <span class="md:hidden block"
+                    ><i class="fa-solid fa-plus"></i
+                  ></span>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -988,5 +1042,6 @@
     src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
   ></script>
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/nav.js"></script>
   </body>
 </html>
