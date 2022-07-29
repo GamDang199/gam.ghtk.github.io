@@ -18,8 +18,8 @@
         <h2>Sign Up User</h2>
         <div class="input-1">
           <label for="fullname">Fullname</label>
-          <input id="fullname" name="fullname" rules="required" type="text" />
-          <span class="form-message">Trường này không được để trống</span>
+          <input id="fullname" name="fullname" rules="required" type="text" onblur="valFul()"/>
+          <span class="form-message mes-fullname">Trường này không được để trống</span>
         </div>
         <div class="input-1">
           <label for="classroom">Classroom</label>
@@ -76,5 +76,6 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="validate.js"></script>
   </body>
 </html>

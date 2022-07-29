@@ -19,15 +19,6 @@
       "id": 3
     },
     {
-      "name": "Mai Thị Thu Ly",
-      "classroom": "12A8",
-      "email": "lymtt@gmail.com",
-      "birthday": "2022-06-24",
-      "createdAt": 1655789757390,
-      "updatedAt": 1655789757390,
-      "id": 4
-    },
-    {
       "name": "Trần Thị Mỹ Dung",
       "classroom": "12A8",
       "email": "dangthihonggam199@gmail.com",
@@ -35,22 +26,6 @@
       "createdAt": 1655790096679,
       "updatedAt": 1655790096679,
       "id": 5
-    },
-    {
-      "name": "Trần Viet Long",
-      "classroom": "12A8",
-      "email": "dangthihonggam199@gmail.com",
-      "birthday": "2022-06-18",
-      "id": 6
-    },
-    {
-      "name": "Tran Hai Duong",
-      "classroom": "12A8",
-      "email": "haiduong@gmail.com",
-      "birthday": "2022-06-16",
-      "createdAt": 1655796781212,
-      "updatedAt": 1655796781212,
-      "id": 7
     }
   ]
 }

@@ -64,6 +64,18 @@ const createAndUpdate = () => {
   }
 }
 
+const preDelete = (id) => {
+  var message = confirm("Ban muon xoa?");
+  if(message) {
+    axios.delete("http://localhost:3000/api/student/" + id).then(res => {
+    console.log("Delete susccessfully!");
+    }).catch(er => {
+      console.log("Delete failed!");
+    })
+  } else {
+
+  }
+}
 
 const deleteStudent = (id) => {
   console.log(id);
@@ -86,7 +98,7 @@ const displayStudent = (s, index) => {
             <button class="btn btn-edit" id="btn-edit" type="button" onclick="preUpdateStudent(${s.id})">Edit</button>
         </td>
         <td>
-            <button class="btn btn-delete" id="btn-delete" onclick="deleteStudent(${s.id})">Delete</button>
+            <button class="btn btn-delete" id="btn-delete" onclick="preDelete(${s.id})">Delete</button>
         </td>
     </tr>
     `;

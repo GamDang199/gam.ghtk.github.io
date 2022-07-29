@@ -39,7 +39,6 @@ body {
   outline: 1px solid #7d827e;
 }
 .form-create form .input-1 span.form-message {
-  display: none;
   color: #bf1d0b;
   margin-top: 7px;
 }

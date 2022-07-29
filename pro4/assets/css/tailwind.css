@@ -1,0 +1,16 @@
+
+
+@layer components {
+    .header-top {
+        @apply flex 
+    }
+
+    .span {
+        @apply text-green-500
+    }
+
+    .button {
+        @apply bg-green-600
+    }
+}
+
