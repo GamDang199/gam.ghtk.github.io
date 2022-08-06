@@ -1,8 +1,14 @@
 import React from 'react'
 
 const Logout = () => {
+  
+  const logout = (e: any) => {
+    localStorage.clear()
+  }
   return (
-    <div>Logout</div>
+    <div>
+      <button onClick={logout}>Logout</button>
+    </div>
   )
 }
 

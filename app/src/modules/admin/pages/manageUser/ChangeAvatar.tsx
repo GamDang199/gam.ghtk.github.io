@@ -1,8 +1,14 @@
+import { Modal } from 'antd'
 import React from 'react'
 
 const ChangeAvatar = () => {
   return (
-    <div>ChangeAvatar</div>
+    <div>
+      <div>Change Avatar</div>
+      <Modal>
+        
+      </Modal>
+    </div>
   )
 }
 

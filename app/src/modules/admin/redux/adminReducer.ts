@@ -4,7 +4,8 @@ import produce from 'immer';
 export const defaultState = {
     categories: [],
     vendors: [],
-    users: []
+    users: [],
+    user: {}
   };
 
 export const ManageAdminReducer = (state = defaultState, action: any) => {
@@ -15,6 +16,12 @@ export const ManageAdminReducer = (state = defaultState, action: any) => {
                 break
             case AdminType.GET_LIST_VENDOR_SUCCESS:
                 draft.vendors = action.payload;
+                break
+            case AdminType.GET_LIST_USER_SUCCESS:
+                draft.users = action.payload;
+                break
+            case AdminType.GET_USER_BY_ID_SUCCESS:
+                draft.user = action.payload
                 break
             default: break
         }

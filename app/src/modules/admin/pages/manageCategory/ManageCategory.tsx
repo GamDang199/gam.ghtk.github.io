@@ -7,6 +7,7 @@ import 'antd/dist/antd.css';
 import DeleteCategory from "./DeleteCategory";
 import AddCategory from "./AddCategory";
 import UpdateCategory from "./UpdateCategory";
+import UploadImage from "./UploadImage";
 
 const ManageCategory = () => {
   const listCategory = useSelector((state: any) => state.admin.categories);
@@ -54,6 +55,7 @@ const ManageCategory = () => {
       key: "id",
       render: (text: any, record: any, index: any) => (
         <div className="flex justify-around">
+          <UploadImage id={record.id}/>
           <UpdateCategory user_id={user_id} category={record}/>
           <DeleteCategory id={record.id} />
         </div>

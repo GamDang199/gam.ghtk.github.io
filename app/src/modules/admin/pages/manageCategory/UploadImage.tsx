@@ -1,9 +1,84 @@
-import React from 'react'
+import { Form, Input, Modal, Upload } from "antd";
+import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { actionUploadImageCategory } from "../../redux/adminAction";
+import "antd/dist/antd.css";
 
-const UploadImage = () => {
+const UploadImage = ({ id }: any) => {
+  const [file, setFile] = useState<Object>();
+  const [image, setImage] = useState<any>("");
+  const resetForm = useRef<any>(null);
+  const [visible, setVisible] = useState<boolean>(false);
+  const [confirmLoading, setConfirmLoading] = useState<boolean>(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [form] = Form.useForm();
+  const dispatch = useDispatch();
+  const showModal = () => {
+    setVisible(true);
+  };
+  const changeImage = (e: any) => {
+    setImage(e.target.files[0]);
+    setFile(e.target.files[0]);
+  };
+
+  const handleOk = () => {
+    setConfirmLoading(true);
+    dispatch(actionUploadImageCategory({ id, file }));
+    setTimeout(() => {
+      setVisible(false);
+      setConfirmLoading(false);
+    }, 2000);
+    setImage(null);
+    setFile(undefined);
+    form.resetFields();
+  };
+  const handleCancel = () => {
+    form.resetFields();
+    setVisible(false);
+    setImage(null);
+    setFile(undefined);
+    
+  };
+
   return (
-    <div>UploadImage</div>
-  )
-}
+    <div>
+      <button className="text-green-700" onClick={showModal}>
+        <i className="fa-solid fa-upload"></i>
+      </button>
+      <Modal
+        title="Upload Image"
+        visible={visible}
+        onOk={handleOk}
+        confirmLoading={confirmLoading}
+        onCancel={handleCancel}
+        okButtonProps={{ disabled: buttonDisabled }}
+      >
+        <Form
+          onFieldsChange={() =>
+            setButtonDisabled(
+              form.getFieldsError().some((field) => field.errors.length > 0)
+            )
+          }
+        >
+          <div>
+            {image && (
+              <img
+                src={URL.createObjectURL(image)}
+                alt=""
+                className="w-[200px] h-[200px]"
+              />
+            )}
+          </div>
+          <Form.Item
+            name="file"
+            rules={[{ required: true, message: "Please enter iamge" }]}
+          >
+            <Input type="file" onChange={changeImage} />
+          </Form.Item>
+        </Form>
+      </Modal>
+    </div>
+  );
+};
 
-export default UploadImage
+export default UploadImage;

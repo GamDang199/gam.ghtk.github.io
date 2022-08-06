@@ -1,5 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import {Routes, Route} from 'react-router-dom';
+import UserDetail from '../modules/admin/pages/manageUser/UserDetail';
+import Profile from '../modules/auth/component/Profile';
 import FallbackView from '../_metronic/partials/FallbackView';
 // import AdminHomePage from '../modules/admin/pages/AdminHomePage';
 // import AdminManageCategory from '../modules/admin/pages/manageCategory/ManageCategory';
@@ -20,7 +22,9 @@ const PrivateRoutes = () => {
             <Route path='/home' element={<AdminHomePage />}>
                 <Route path='manage-category' element={<AdminManageCategory />}/>
                 <Route path='manage-vendor' element={<AdminManageVendor />}/>
-                <Route path='manage-user' element={<AdminManageUser />}/>
+                <Route path='manage-user' element={<AdminManageUser />} />
+                <Route path='manage-user/:id' element={<UserDetail />} />
+                <Route path='profile' element={<Profile />} />
             </Route>
         </Routes>
         </Suspense>

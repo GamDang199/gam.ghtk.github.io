@@ -1,5 +1,4 @@
 import { notify } from './../../config/notify';
-import axios from "axios";
 import client from ".";
 import { ICategory } from "../../../setup/redux/State";
 
@@ -56,7 +55,9 @@ export const updateCategoryApi = async(param: any) => {
     }
 }
 
-export const uploadImageCategoryApi = async(id: number, param: object) => {
+export const uploadImageCategoryApi = async(param: any) => {
+    console.log(param);
+    
     try {
         const config = {
             headers: {
@@ -64,7 +65,7 @@ export const uploadImageCategoryApi = async(id: number, param: object) => {
                 'Authorization': `${getToken()}`
             }
         }
-        const res = await client.post(`/update-image/${id}`, param, config)
+        const res = await client.post(`/update-image/${param.id}`, param.file, config)
         return res.data
     } catch (error) {
         console.log(error);

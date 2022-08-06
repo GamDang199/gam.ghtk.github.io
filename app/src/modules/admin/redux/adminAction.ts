@@ -22,6 +22,8 @@ export enum AdminType {
 
   GET_LIST_USER = "[Admin] GET_LIST_USER",
   GET_LIST_USER_SUCCESS = "[Admin] GET_LIST_USER_SUCCESS",
+  GET_USER_BY_ID = "[Admin] GET_USER_BY_ID",
+  GET_USER_BY_ID_SUCCESS = "[Admin] GET_USER_BY_ID_SUCCESS",
   CREATE_USER = "[Admin] CREATE_USER",
   DELETE_USER = "[Admin] DELETE_USER",
   UPDATE_USER = "[Admin] UPDATE_USER", 
@@ -90,8 +92,18 @@ export const actionGetListUser = () => ({
   type: AdminType.GET_LIST_USER
 })
 
+export const actionGetUserById = (id: any) => ({
+  type: AdminType.GET_USER_BY_ID,
+  payload: id
+})
+
 export const actionGetListUserSuccess = (data: any) => ({
   type: AdminType.GET_LIST_USER_SUCCESS,
+  payload: data
+})
+
+export const actionUserByIdSuccess = (data: any) => ({
+  type: AdminType.GET_USER_BY_ID_SUCCESS,
   payload: data
 })
 

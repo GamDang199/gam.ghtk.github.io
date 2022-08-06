@@ -14,6 +14,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import Login from "../../auth/component/Login";
+import Auth from "../../auth/component/Auth";
 
 const { Header, Content, Footer, Sider } = Layout;
 const items = [
@@ -31,6 +32,7 @@ const items = [
 }));
 
 const AdminHomePage = () => {
+  const token = localStorage.getItem('accessToken') || null
   return (
     <Layout hasSider>
       <Sider
@@ -43,7 +45,9 @@ const AdminHomePage = () => {
           bottom: 0,
         }}
       >
-        <div className="logo" />
+        <div className="logo" >
+          <Link to="/home/manage-user">Logo</Link>
+        </div>
         <Menu
           theme="dark"
           mode="inline"
@@ -64,7 +68,7 @@ const AdminHomePage = () => {
           }}
         >
           <div className="flex justify-end mr-[50px] my-2">
-            <Login />
+            {!token ? <Login />:<Auth />}
           </div>
         </Header>
         <Content
