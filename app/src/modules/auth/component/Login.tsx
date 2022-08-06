@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 // import { alertError } from '../../../shared/toastify';
 import { IUser } from '../../../setup/redux/State';
@@ -25,6 +26,7 @@ const initialValues = {
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState<boolean>(false);
+  let navigate = useNavigate();
   const showModal = () => {
     setVisible(true);
   };
@@ -44,6 +46,7 @@ const Login = () => {
           .data;
         localStorage.setItem("accessToken", userData.accessToken);
         dispatch(actionLoginSuccess(userData));
+        navigate('home/manage-user', {replace: true})
         setLoading(false);
         setSubmitting(false);
       } catch (error: any) {
@@ -51,6 +54,7 @@ const Login = () => {
         setSubmitting(false);
         setStatus(error.message);
       }
+      setVisible(false);
     },
   });
   return (

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { actionGetListUser } from "../../redux/adminAction";
+import DeleteUser from "./DeleteUser";
 
 const ManageUser = () => {
   const listUsers = useSelector((state: any) => state.admin.users);
@@ -55,9 +56,10 @@ const ManageUser = () => {
       key: "id",
       render: (text: any, record: any, index: any) => (
         <div className="flex justify-around">
-          <span className="bg-green-500 px-7 py-3 rounded-[5px] hover:bg-green-700">
-            <Link to={`/home/manage-user/${record.id}`} style={styleLink}>Detail</Link>
+          <span className="mt-1">
+            <Link to={`/home/manage-user/${record.id}`} style={styleLink}><i className="fa-solid fa-circle-info"></i></Link>
           </span>
+          <DeleteUser id={record.id} name={record.username}/>
         </div>
       ),
     },
@@ -73,7 +75,4 @@ export default ManageUser;
 
 const styleLink = {
   textDecoration: "none",
-  color: 'white',
-  fontSize: '18px',
-  fontWeight: '500'
 }

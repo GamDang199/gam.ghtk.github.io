@@ -23,6 +23,9 @@ export const ManageAdminReducer = (state = defaultState, action: any) => {
             case AdminType.GET_USER_BY_ID_SUCCESS:
                 draft.user = action.payload
                 break
+            case AdminType.CHANGE_AVATAR_SUCCESS:
+                draft.user = action.payload
+                break
             default: break
         }
     })

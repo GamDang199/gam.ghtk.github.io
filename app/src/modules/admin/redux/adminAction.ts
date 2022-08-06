@@ -26,7 +26,12 @@ export enum AdminType {
   GET_USER_BY_ID_SUCCESS = "[Admin] GET_USER_BY_ID_SUCCESS",
   CREATE_USER = "[Admin] CREATE_USER",
   DELETE_USER = "[Admin] DELETE_USER",
-  UPDATE_USER = "[Admin] UPDATE_USER", 
+  UPDATE_USER = "[Admin] UPDATE_USER",
+  CHANGE_AVATAR = "[Admin] CHANGE_AVATAR",
+  CHANGE_AVATAR_SUCCESS = "[Admin] CHANGE_AVATAR_SUCCESS",
+  CHANGE_PASSWORD = "[Admin] CHANGE_PASSWORD",
+  SEARCH_USER_BY_PHONE = "[Admin] SEARCH_USER_BY_PHONE",
+  SEARCH_USER_BY_PHONE_SUCCESS = "[Admin] SEARCH_USER_BY_PHONE_SUCCESS"
 }
 
 //====================CATEGORY==========================//
@@ -120,4 +125,29 @@ export const actionUpdateUser = (param: any) => ({
 export const actionDeleteUser = (id: number) => ({
   type: AdminType.DELETE_USER,
   payload: id
+})
+
+export const actionChangeAvatar = (param: any) => ({
+  type: AdminType.CHANGE_AVATAR,
+  payload: param
+})
+
+export const actionChangeAvatarSuccess = (param: any) => ({
+  type: AdminType.CHANGE_AVATAR_SUCCESS,
+  payload: param
+})
+
+export const actionChangePassword = (param: any) => ({
+  type: AdminType.CHANGE_PASSWORD,
+  payload: param
+})
+
+export const actionSearchUserByPhone = (param: any) => ({
+  type: AdminType.SEARCH_USER_BY_PHONE,
+  payload: param
+})
+
+export const actionSearchUserByPhoneSuccess = (param:any) => ({
+  type: AdminType.SEARCH_USER_BY_PHONE_SUCCESS,
+  payload: param
 })

@@ -2,7 +2,6 @@ import { IUser } from './../../../setup/redux/State';
 import client from '.'
 import { notify } from '../../config/notify';
 
-
 export const login = async (username: string, password: string) => {
     try {
         const res = await client.post('auth/login', {username, password});
@@ -15,11 +14,23 @@ export const login = async (username: string, password: string) => {
 }
 
 export const signup = async (param: IUser) => {
+    
     try {
         const res = await client.post('auth/login', param);
         return res.data
     } catch (error) {
         console.log(error);
         
+    }
+}
+
+export const logoutApi = async () => {
+    try {
+        const res = await client.post('auth/logout');
+        notify('success', 'Login', 'Logout successfully!')
+        localStorage.clear()
+        return res.data
+    } catch (error) {
+        notify('error', 'Login', 'Logout failed!')
     }
 }

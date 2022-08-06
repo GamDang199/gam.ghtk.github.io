@@ -49,26 +49,22 @@ export const updateCategoryApi = async(param: any) => {
         notify('success', 'res', 'Update successfully!')
         return res.data
     } catch (error) {
-        console.log(error);
         notify('error', 'Category', 'Update Failed!')
         
     }
 }
 
 export const uploadImageCategoryApi = async(param: any) => {
-    console.log(param);
-    
     try {
         const config = {
             headers: {
                 'Content-Type': 'multipart/form-data',
-                'Authorization': `${getToken()}`
             }
         }
-        const res = await client.post(`/update-image/${param.id}`, param.file, config)
+        const res = await client.post(`category/update-image/${param.id}`, param.file, config)
+        notify('success', 'Upload Image Category', 'Upload successfully!')
         return res.data
     } catch (error) {
-        console.log(error);
-        
+        notify('error', 'Upload Image Category', 'Upload Failed!')
     }
 }

@@ -21,24 +21,28 @@ export const getUserByIdApi = async(id: any) => {
     }
 }
 
-export const postCategoryApi = async(param: IUser) => {
+export const changeAvatarApi = async(param: any) => {
+    
+    
     try {
-        const res = await client.post('category', param)
-        notify('success', 'Category', 'Create category successfully!')
+        const res = await client.post(`user/change-avatar/${param.id}`, param.state)
+        console.log(res.data);
+        
+        notify('success', 'User', 'Upload Image successfully!')
         return res.data
     } catch (error) {
         console.log(error);
-        notify('error', 'Category', 'Create category failed!')
+        notify('error', 'User', 'Upload Image failed!')
     }
 }
 
-export const deleteCategoryApi = async(id: number) => {
+export const deleteUserApi = async(id: number) => {
     
     try {
-        const res = await client.delete(`category/${id}`)
-        notify('success', 'res', 'Delete successfully!')
+        const res = await client.delete(`user/delete-user/${id}`)
+        notify('success', 'User', 'Delete successfully!')
         return res.data
     } catch (error) {
-        notify('error', 'Category', 'Delete Failed!')
+        notify('error', 'User', 'Delete Failed!')
     }
 }

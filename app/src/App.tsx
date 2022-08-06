@@ -6,9 +6,10 @@ import Login from './modules/auth/component/Login';
 import React from 'react';
 
 function App() {
+  
   return (
     <BrowserRouter>
-      {/* <Login /> */}
+      <Login />
       
       <Routing />
     </BrowserRouter>
