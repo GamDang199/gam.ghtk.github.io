@@ -6,14 +6,13 @@ import { Link } from "react-router-dom";
 import ChangeAvatar from "./ChangeAvatar";
 import ChangePassword from "./ChangePassword";
 import Logout from "./Logout";
-import Profile from "./Profile";
 
 const menu = (
   <Menu
     items={[
       {
         key: "1",
-        label: <Link to="/home/profile">Profile</Link>,
+        label: <Link to="/profile">Profile</Link>,
       },
       {
         key: "2",

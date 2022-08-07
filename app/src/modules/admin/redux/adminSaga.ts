@@ -1,8 +1,8 @@
 
-import { actionGetListCategorySuccess, AdminType, actionGetListUserSuccess, actionUserByIdSuccess, actionChangeAvatarSuccess } from './adminAction';
+import { actionGetListCategorySuccess, AdminType, actionGetListUserSuccess, actionUserByIdSuccess } from './adminAction';
 import { deleteCategoryApi, getListCategoryApi, postCategoryApi, updateCategoryApi, uploadImageCategoryApi } from './../../../shared/services/api/manageCategoryApi';
 import { call, put, takeLatest } from "redux-saga/effects";
-import { changeAvatarApi, deleteUserApi, getListUserApi, getUserByIdApi } from '../../../shared/services/api/manageUserApi';
+import { deleteUserApi, getListUserApi, getUserByIdApi } from '../../../shared/services/api/manageUserApi';
 
 // ======================Category===========================
 function* getListCategory(): Generator<any, void, string> {
@@ -86,17 +86,17 @@ function* getListCategory(): Generator<any, void, string> {
     }
   }
 
-  function* changeAvatar({ payload }: any): Generator<any, void, string> {
-    console.log(payload);
+  // function* changeAvatar({ payload }: any): Generator<any, void, string> {
+  //   console.log(payload);
     
-    try {
-      const res: any = yield call(changeAvatarApi, payload);
-      yield put(actionChangeAvatarSuccess(res.data));
-    } catch (error) {
-      console.log(error);
+  //   try {
+  //     const res: any = yield call(changeAvatarApi, payload);
+  //     yield put(actionChangeAvatarSuccess(res.data));
+  //   } catch (error) {
+  //     console.log(error);
       
-    }
-  }
+  //   }
+  // }
 
   function* deleteUser({ payload }: any): Generator<any, void, string> {
     
@@ -122,7 +122,6 @@ function* getListCategory(): Generator<any, void, string> {
     //======================USER========================//
     yield takeLatest(AdminType.GET_LIST_USER, getListUser);
     yield takeLatest(AdminType.GET_USER_BY_ID, getUserById);
-    yield takeLatest(AdminType.CHANGE_AVATAR, changeAvatar);
     yield takeLatest(AdminType.DELETE_USER, deleteUser);
     
   }

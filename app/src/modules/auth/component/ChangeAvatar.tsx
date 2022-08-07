@@ -2,7 +2,8 @@ import { Form, Input, Modal } from "antd";
 import { RcFile } from "antd/lib/upload";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actionChangeAvatar } from "../../admin/redux/adminAction";
+import {  } from "../../admin/redux/adminAction";
+import { actionChangeAvatar } from "../redux/AuthActions";
 
 
 const ChangeAvatar = () => {

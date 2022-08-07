@@ -11,5 +11,5 @@ function* logout({payload}: any): Generator<any, void, string> {
     }
   }
 export default function* authSaga() {
-    takeLatest(EAuthType.LOGOUT, logout)
+  takeLatest(EAuthType.LOGOUT, logout)
 };

@@ -21,21 +21,6 @@ export const getUserByIdApi = async(id: any) => {
     }
 }
 
-export const changeAvatarApi = async(param: any) => {
-    
-    
-    try {
-        const res = await client.post(`user/change-avatar/${param.id}`, param.state)
-        console.log(res.data);
-        
-        notify('success', 'User', 'Upload Image successfully!')
-        return res.data
-    } catch (error) {
-        console.log(error);
-        notify('error', 'User', 'Upload Image failed!')
-    }
-}
-
 export const deleteUserApi = async(id: number) => {
     
     try {

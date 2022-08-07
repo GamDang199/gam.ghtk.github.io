@@ -20,8 +20,8 @@ const loginSchema = Yup.object().shape({
 
 
 const initialValues = {
-  username: "admin",
-  password: "admin",
+  username: "vendor",
+  password: "vendor",
 };
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -46,7 +46,7 @@ const Login = () => {
           .data;
         localStorage.setItem("accessToken", userData.accessToken);
         dispatch(actionLoginSuccess(userData));
-        navigate('home/manage-user', {replace: true})
+        navigate('/', {replace: true})
         setLoading(false);
         setSubmitting(false);
       } catch (error: any) {

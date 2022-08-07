@@ -3,14 +3,9 @@ import "../css/index.css";
 import { Link, Outlet } from "react-router-dom";
 import React from "react";
 import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
   ShopOutlined,
   TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import Login from "../../auth/component/Login";
