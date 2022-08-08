@@ -24,5 +24,13 @@ export const data = {
         {value: 'problem 1', label: "Cam hong"},
         {value: 'problem 2', label: "Cam mo"},
         {value: 'problem 3', label: "Cam loi"}
+    ],
+    error: [
+        {value: 'Tất cả', label: "286"},
+        {value: 'Gian lận', label: "1"},
+        {value: 'Thao tác sai', label: "285"},
+        {value: 'Xe đến trễ', label: "201"},
+        {value: 'Xe nhập trễ', label: "1"},
+        {value: 'Xe xuất trễ', label: "9"},
     ]
 }

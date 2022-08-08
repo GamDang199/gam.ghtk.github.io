@@ -5,7 +5,7 @@ import { defineProps, ref } from "vue";
 
 interface IProps {
   title: String;
-  data: Array<any>;
+  options: Array<any>;
 }
 const props = defineProps<IProps>();
 
@@ -18,7 +18,7 @@ const emits = defineEmits(["search", "change"]);
     :placeholder="title"
     :autofocus="true"
     class="select"
-    :options="props.data"
+    :options="props.options"
     @change="(value, option) => emits('change', value, option)"
   >
     <template #suffixIcon>

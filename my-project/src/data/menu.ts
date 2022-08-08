@@ -1,45 +1,59 @@
+import { createRouter, createWebHistory } from 'vue-router'
+
+const Rule = () => import('../modules/rule/Rule.vue')
+const StruckControl = () => import('../modules/struckControl/StruckControl.vue')
+const GTCLost = () => import('../modules/GTCLost/GTCLost.vue')
+const MissExport = () => import('../modules/missExport/MissExport.vue')
+const MissImport = () => import('../modules/missImport/MissImport.vue')
+const ImageContainer = () => import('../modules/imageContainer/ImageContainer.vue')
 
 
 export const menu: any = [
     {
-        path: '',
+        path: '/*',
         name: '5S và Nội quy',
-        component: '',
+        component: Rule,
         icon: ''
     },
     {
-        path: '',
+        path: '/struck-control',
         name: 'Kiểm soát xa tải',
-        component: '',
+        component: StruckControl,
         icon: ''
     },
     {
-        path: '',
+
         name: 'Kiểm soát chất lượng',
-        component: '',
         icon: 'CaretDownOutlined',
         children: [
             {
-                path: '',
+                path: '/miss-import',
                 name: 'Nhập thiếu',
-                component: '',
+                component: MissImport,
             },
             {
-                path: '',
+                path: '/miss-export',
                 name: 'Xuất thiếu',
-                component: '',
+                component: MissExport,
             },
             {
-                path: '',
+                path: '/gtc-lost',
                 name: 'Mất hàng STC',
-                component: '',
+                component: GTCLost,
             },
             
         ]
     },
     {
-        path: '',
+        path: '/image-container',
         name: 'Ảnh thùng xe',
-        component: '',
+        component: ImageContainer,
     } 
 ]
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes: menu
+})
+
+export default router
