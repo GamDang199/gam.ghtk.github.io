@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import Sidebar from '../../layout/sidebar/Sidebar.vue';
-import StruckControlHeader from '../../layout/header/StruckControlHeader.vue';
+import RuleHeader from '../../layout/header/RuleHeader.vue';
 </script>
 
 <template>
    <div class="layout flex">
     <div class="content w-full">
       <div class="header">
-        <StruckControlHeader />
+        <RuleHeader />
       </div>
       <div class="main">
         5s And Rule

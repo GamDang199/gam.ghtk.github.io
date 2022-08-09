@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import Sidebar from '../../layout/sidebar/Sidebar.vue';
-import StruckControlHeader from '../../layout/header/StruckControlHeader.vue';
+import MissImportHeader from '../../layout/header/MissImportHeader.vue'
 </script>
 
 <template>
    <div class="layout flex">
     <div class="content w-full">
       <div class="header">
-        <StruckControlHeader />
+        <MissImportHeader />
       </div>
       <div class="main">
         Miss Import

@@ -25,5 +25,6 @@ const props = defineProps<IProps>()
     outline: none;
     margin-right: 5px;
     border: none;
+    font-weight: 500;
 }
 </style>

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import Sidebar from '../../layout/sidebar/Sidebar.vue';
-import StruckControlHeader from '../../layout/header/StruckControlHeader.vue';
+import ImageContainerHeader from '../../layout/header/ImageContainerHeader.vue';
 </script>
 
 <template>
    <div class="layout flex">
     <div class="content w-full">
       <div class="header">
-        <StruckControlHeader />
+        <ImageContainerHeader />
+        <g-date />
       </div>
       <div class="main">
        Image Container
